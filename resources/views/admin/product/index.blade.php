@@ -19,7 +19,7 @@
                     </div>
                     <div class="page-rightheader">
                         <div class="btn btn-list">
-                            <a href="{{route('add_user')}}" class="btn btn-info"><i class="fe fe-plus mr-1"></i>Add User</a>
+                            <a href="{{route('add_product')}}" class="btn btn-info"><i class="fe fe-plus mr-1"></i>Add Product</a>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                     <div class="col-xl-12 col-lg-12 col-md-12">
                         <div class="card">
                             <div class="card-header bg-primary text-white">
-                                <div class="card-title">User List</div>
+                                <div class="card-title">Product List</div>
                             </div>
                             <div class="card-body">
                                 <div class="">
@@ -42,42 +42,36 @@
                                         <table id="example1" class="table table-bordered text-nowrap key-buttons">
                                             <thead>
                                                 <tr>
-                                                    <th class="wd-15p border-bottom-0">User Id</th>
-                                                    <th class="wd-15p border-bottom-0">Employee Code</th>
-                                                    <th class="wd-15p border-bottom-0">Device Code</th>
-                                                    <th class="wd-15p border-bottom-0">Name</th>
-                                                    <th class="wd-15p border-bottom-0">Email</th>
-                                                    <th class="wd-15p border-bottom-0">Phone Number</th>
-                                                    <th class="wd-15p border-bottom-0">Department</th>
-                                                    <th class="wd-15p border-bottom-0">User Type</th>
-                                                    <th class="wd-15p border-bottom-0">Date</th>
+                                                    <th class="wd-15p border-bottom-0">#</th>
+                                                    <th class="wd-15p border-bottom-0">Title</th>
+                                                    <th class="wd-15p border-bottom-0">Image</th>
+                                                    <th class="wd-15p border-bottom-0">Slug</th>
+                                                    <th class="wd-15p border-bottom-0">Category</th>
                                                     <th class="wd-15p border-bottom-0">Status</th>
                                                     <th class="wd-20p border-bottom-0">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @if(isset($get_user))
-                                                @foreach($get_user as $list)
+                                                @if(isset($category_list))
+                                                @foreach($category_list as $list)
                                                 <tr>
                                                     <td>{{$list->id}}</td>
-                                                    <td>{{$list->employee_code}}</td>
-                                                    <td>{{$list->device_code}}</td>
-                                                    <td>{{$list->name}}</td>
-                                                    <td>{{$list->email}}</td>
-                                                    <td>{{$list->phone_number}}</td>
-                                                    <td>{{$list->department}}</td>
-                                                    <td>{{$list->role}}</td>
-                                                    <td>{{$list->created_at}}</td>
+                                                    <td>{{$list->title}}</td>
+                                                    <td>
+                                                        <img src="{{asset('public/admin/assets/product/'.$list->product_img)}}" width="75px">
+                                                    </td>
+                                                    <td>{{$list->slug}}</td>
+                                                    <td>1</td>
                                                     <td>
                                                         @if($list->status == '1')
-                                                        <a href="{{route('edit_user_status', $list->id)}}" class="btn btn-success btn-sm">Active</a>
+                                                        <a href="{{route('update_product_status', $list->id)}}" class="btn btn-success btn-sm">Active</a>
                                                         @else
-                                                        <a href="{{route('edit_user_status', $list->id)}}" class="btn btn-danger btn-sm">Deactive</a>
+                                                        <a href="{{route('update_product_status', $list->id)}}" class="btn btn-danger btn-sm">Deactive</a>
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        <a href="{{route('edit_user',$list->id)}}" onclick="return confirm('Are you sure to edit?');" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i></a>
-                                                        <a href="{{route('delete_user',$list->id)}}" onclick="return confirm('Are you sure to delete?');" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                                                        <a href="{{route('edit_product',$list->id)}}" onclick="return confirm('Are you sure to edit?');" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i></a>
+                                                        <a href="{{route('delete_product_action',$list->id)}}" onclick="return confirm('Are you sure to delete?');" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
                                                     </td>
                                                 </tr>
                                                 @endforeach

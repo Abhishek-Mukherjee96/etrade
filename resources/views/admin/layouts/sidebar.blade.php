@@ -51,7 +51,8 @@ $profile_details = User::where('id', Auth::user()->id)->select('users.*')->first
                 </svg>
                 <span class="side-menu__label">Product</span><i class="angle fa fa-angle-right"></i></a>
             <ul class="slide-menu">
-                <li><a href="" class="slide-item">Product List</a></li>
+                <li><a href="{{route('category_list')}}" class="slide-item">Category List</a></li>
+                <li><a href="{{route('product_list')}}" class="slide-item">Product List</a></li>
             </ul>
         </li>
     </ul>

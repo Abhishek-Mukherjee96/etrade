@@ -28,92 +28,90 @@
                     <div class="col-xl-12 col-lg-12 col-md-12">
                         <div class="card">
                             <div class="card-header bg-primary text-white">
-                                <h3 class="card-title">Add User</h3>
+                                <h3 class="card-title">Add Product</h3>
                             </div>
                             <div class="card-body pb-2">
-                                <form action="{{route('add_user_action')}}" enctype="multipart/form-data" method="post">
+                                <form action="{{route('add_product_action')}}" enctype="multipart/form-data" method="post">
                                     @csrf
                                     <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <label><strong>Employee Code:</strong></label>
-                                            <input class="form-control mb-4" value="{{old('employee_code')}}" placeholder="Employee Code" type="text" name="employee_code">
-                                            @error('employee_code')
-                                            <span class="text text-danger">{{$message}}</span>
-                                            @enderror
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label><strong>Device Code:</strong></label>
-                                            <input class="form-control mb-4" value="{{old('device_code')}}" placeholder="Device Code" type="text" name="device_code">
-                                            @error('device_code')
+                                        <div class="col-md-3 mb-3">
+                                            <label><strong> Title:</strong></label>
+                                            <input class="form-control mb-4" value="{{old('title')}}" placeholder=" Title" type="text" name="title">
+                                            @error('title')
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
                                         <div class="col-md-3 mb-3">
-                                            <label><strong>Name:</strong></label>
-                                            <input class="form-control mb-4" value="{{old('name')}}" placeholder="Name" type="text" name="name">
-                                            @error('name')
-                                            <span class="text text-danger">{{$message}}</span>
-                                            @enderror
-                                        </div>
-                                        <div class="col-md-3 mb-3">
-                                            <label><strong>Email:</strong></label>
-                                            <input class="form-control mb-4" value="{{old('email')}}" placeholder="Email" type="text" name="email">
-                                            @error('email')
-                                            <span class="text text-danger">{{$message}}</span>
-                                            @enderror
-                                        </div>
-                                        <div class="col-md-3 mb-3">
-                                            <label><strong>Phone Number:</strong></label>
-                                            <input class="form-control mb-4" value="{{old('phone_number')}}" placeholder="Phone Number" type="text" name="phone_number">
-                                            @error('phone_number')
-                                            <span class="text text-danger">{{$message}}</span>
-                                            @enderror
-                                        </div>
-                                        <div class="col-md-3 mb-3">
-                                            <label><strong>Department:</strong></label>
-                                            <select class="form-control" name="department">
-                                                <option value="" selected disabled>---Select Department---</option>
-                                                <option value="Development Head">Development Head</option>
-                                                <option value="Website Development">Website Development</option>
-                                                <option value="SEO">SEO</option>
-                                                <option value="SMM">SMM</option>
-                                                <option value="Content Writing">Content Writing</option>
-                                                <option value="Video Editing">Video Editing</option>
-                                                <option value="Graphic Designing">Graphic Designing</option>
+                                            <label><strong>Category:</strong></label>
+                                            <select name="cat_id" class="form-control">
+                                                @if(isset($category))
+                                                @foreach($category as $cat)
+                                                <optgroup label="{{$cat->parent_category}}">
+                                                    <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                                </optgroup>
+                                                @endforeach
+                                                @endif
                                             </select>
-                                            @error('department')
+                                            @error('cat_id')
+                                            <span class="text text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label><strong> Regular Price:</strong></label>
+                                            <input class="form-control mb-4" value="{{old('regular_price')}}" placeholder=" Regular Price" type="text" name="regular_price">
+                                            @error('regular_price')
+                                            <span class="text text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label><strong> Selling Price:</strong></label>
+                                            <input class="form-control mb-4" value="{{old('selling_price')}}" placeholder=" Selling Price" type="text" name="selling_price">
+                                            @error('selling_price')
+                                            <span class="text text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label><strong>Image:</strong></label>
+                                            <input class="form-control mb-4" type="file" name="product_img">
+                                            @error('product_img')
+                                            <span class="text text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label><strong>Image Gallery:</strong></label>
+                                            <input class="form-control mb-4" type="file" name="product_gallery[]" multiple>
+                                            @error('product_gallery')
+                                            <span class="text text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label><strong>Slug:</strong></label>
+                                            <input class="form-control mb-4" type="text" placeholder="Slug" name="slug" value="{{old('slug')}}">
+                                            @error('slug')
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
                                         <div class="col-md-12 mb-3">
-                                            <label><strong>Address:</strong></label>
-                                            <textarea class="form-control mb-4" rows="2" placeholder="Address" name="address">{{old('address')}}</textarea>
-                                            @error('address')
+                                            <label><strong>Short Description:</strong></label>
+                                            <textarea class="form-control" placeholder="Short Description" name="short_desc">{{old('short_desc')}}</textarea>
+                                            @error('short_desc')
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label><strong>User Type:</strong></label>
-                                            <select class="form-control" name="user_type_id">
-                                                <option value="" selected disabled>---Select User Type---</option>
-                                                @if(isset($get_user_type))
-                                                @foreach($get_user_type as $list)
-                                                <option value="{{$list->id}}">{{$list->role}}</option>
-                                                @endforeach
-                                                @endif
-                                            </select>
-                                            @error('user_type')
+                                        <div class="col-md-12 mb-3">
+                                            <label><strong>Additional Info:</strong></label>
+                                            <textarea class="form-control" placeholder="Additional Info" name="additional_info">{{old('additional_info')}}</textarea>
+                                            @error('additional_info')
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label><strong>Password:</strong></label>
-                                            <input class="form-control mb-4" value="{{old('password')}}" placeholder="Password" type="password" name="password">
-                                            @error('password')
+                                        <div class="col-md-12 mb-3">
+                                            <label><strong>Description:</strong></label>
+                                            <textarea class="content" placeholder="Description" name="description">{{old('description')}}</textarea>
+                                            @error('description')
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
-
                                         <div class="col-md-12">
                                             <input type="submit" class="btn btn-info" value="Save">
                                         </div>

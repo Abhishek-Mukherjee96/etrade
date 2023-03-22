@@ -17,22 +17,22 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/update-password', [ProfileController::class, 'update_password'])->name('update_password');
 
     //PRODUCT ROUTE
-    Route::get('/category-list', [categoryController::class, 'category_list'])->name('category_list');
-    Route::get('/add-category', [categoryController::class, 'add_category'])->name('add_category');
-    Route::post('/add-category-action', [categoryController::class, 'add_category_action'])->name('add_category_action');
-    Route::get('/edit-category/{id}', [categoryController::class, 'edit_category'])->name('edit_category');
-    Route::post('/edit-category-action/{id}', [categoryController::class, 'edit_category_action'])->name('edit_category_action');
-    Route::get('/delete-category-action/{id}', [categoryController::class, 'delete_category_action'])->name('delete_category_action');
-    Route::get('/update-category-status/{id}', [categoryController::class, 'update_category_status'])->name('update_category_status');
+    Route::get('/category-list', [ProductController::class, 'category_list'])->name('category_list');
+    Route::get('/add-category', [ProductController::class, 'add_category'])->name('add_category');
+    Route::post('/add-category-action', [ProductController::class, 'add_category_action'])->name('add_category_action');
+    Route::get('/edit-category/{id}', [ProductController::class, 'edit_category'])->name('edit_category');
+    Route::post('/edit-category-action/{id}', [ProductController::class, 'edit_category_action'])->name('edit_category_action');
+    Route::get('/delete-category-action/{id}', [ProductController::class, 'delete_category_action'])->name('delete_category_action');
+    Route::get('/update-category-status/{id}', [ProductController::class, 'update_category_status'])->name('update_category_status');
 
     //PRODUCT ROUTE
     Route::get('/product-list', [ProductController::class, 'product_list'])->name('product_list');
     Route::get('/add-product', [ProductController::class, 'add_product'])->name('add_product');
     Route::post('/add-product-action', [ProductController::class, 'add_product_action'])->name('add_product_action');
-    Route::get('/edit-product', [ProductController::class, 'edit_product'])->name('edit_product');
-    Route::post('/edit-product-action', [ProductController::class, 'edit_product_action'])->name('edit_product_action');
-    Route::get('/delete-product-action', [ProductController::class, 'delete_product_action'])->name('delete_product_action');
-    Route::get('/update-product-status', [ProductController::class, 'update_product_status'])->name('update_product_status');
+    Route::get('/edit-product/{id}', [ProductController::class, 'edit_product'])->name('edit_product');
+    Route::post('/edit-product-action/{id}', [ProductController::class, 'edit_product_action'])->name('edit_product_action');
+    Route::get('/delete-product-action/{id}', [ProductController::class, 'delete_product_action'])->name('delete_product_action');
+    Route::get('/update-product-status/{id}', [ProductController::class, 'update_product_status'])->name('update_product_status');
 
 });
 
