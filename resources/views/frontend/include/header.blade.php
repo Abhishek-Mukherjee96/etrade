@@ -1,199 +1,1169 @@
-@php
-$services = DB::table('what_we_offers')->where('status', '=', 1)->get();
-$project_cat = DB::table('project_categroys')->latest()->get();
-
-@endphp
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="UTF-8">
+	<title>Techno Store - Home Page</title>
 
-    <link rel="icon" href="{{asset('public/frontend')}}/assets/images/icons/favicon.png" type="image/gif" sizes="20x20" />
-    <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/css/animate.css" />
+	<meta name="author" content="CreativeLayers">
 
-    <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/css/all.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="{{asset('public/frontend')}}/stylesheets/bootstrap.min.css">
 
-    <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/css/boxicons.min.css" />
+	<link rel="stylesheet" type="text/css" href="{{asset('public/frontend')}}/stylesheets/style.css">
 
-    <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/css/bootstrap-icons.css" />
+	<link rel="stylesheet" type="text/css" href="{{asset('public/frontend')}}/stylesheets/responsive.css">
 
-    <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/css/jquery-ui.css" />
+	<link rel="shortcut icon" href="{{asset('public/frontend')}}/favicon/favicon.png">
 
-    <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/css/swiper-bundle.css" />
-
-    <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/css/nice-select.css" />
-
-    <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/css/magnific-popup.css" />
-
-    <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/css/odometer.css" />
-
-    <link rel="stylesheet" href="{{asset('public/frontend')}}/assets/css/style.css" />
-
-    <!-- sweetalert js -->
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
-
-    <!-- Google Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
+<body class="header_sticky">
+	<div class="boxed">
 
-<body>
+		<div class="overlay"></div>
 
-    <div id="header-topbar" class="bg-assh-2 pd-y-10">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-lg-8">
-                    <div class="header-topbar-layout2">
-                        <div class="header-top-left">
-                            <div class="item-location"><svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12018 0.574918C2.31702 0.378368 2.55339 0.225896 2.81362 0.127607C3.07385 0.0293176 3.352 -0.0125448 3.62963 0.00479393C3.90727 0.0221327 4.17805 0.0982766 4.42402 0.22818C4.67 0.358083 4.88557 0.538779 5.05643 0.758293L7.0758 3.35254C7.44593 3.82842 7.57643 4.44829 7.43018 5.03329L6.8148 7.49704C6.78299 7.62465 6.78471 7.75832 6.81979 7.88507C6.85488 8.01182 6.92214 8.12734 7.01505 8.22042L9.77918 10.9845C9.87237 11.0776 9.98808 11.145 10.115 11.1801C10.242 11.2152 10.3759 11.2168 10.5037 11.1848L12.9663 10.5694C13.255 10.4972 13.5563 10.4916 13.8475 10.553C14.1387 10.6144 14.4121 10.7412 14.6471 10.9238L17.2413 12.942C18.1739 13.6677 18.2594 15.0458 17.4247 15.8794L16.2614 17.0427C15.4289 17.8752 14.1847 18.2408 13.0248 17.8324C10.0561 16.7879 7.36073 15.0884 5.13855 12.8599C2.91025 10.6381 1.21074 7.94306 0.166053 4.97479C-0.241197 3.81604 0.124428 2.57067 0.956928 1.73817L2.12018 0.574918Z"></path>
-                                </svg><a href="tel:+8801761456456"><span class="country_flag"><img src="{{asset('public/frontend')}}/assets/images/icons/india.png" width="20px"></span>+91 1234567890</a> <a href="{{asset('public/frontend')}}/tel:+8801761456456"><span class="country_flag"><img src="{{asset('public/frontend')}}/assets/images/icons/canada.png" width="20px"></span> +1 (123)-456-7890</a>
+		<!-- Preloader -->
+		<div class="preloader">
+			<div class="clear-loading loading-effect-2">
+				<span></span>
+			</div>
+		</div><!-- /.preloader -->
 
-                                <a href="tel:+8801761456456"><span class="country_flag"> <img src="{{asset('public/frontend')}}/assets/images/icons/united-states-of-america.png" width="20px"></span> +1 (123)-456-7890</a>
-                                <a href="tel:+8801761456456"><span class="country_flag"><img src="{{asset('public/frontend')}}/assets/images/icons/australia.png" width="20px"></span> +1 (123)-456-7890</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 d-flex justify-content-end">
-                    <div class="header-topbar-layout2 d-flex align-items-center">
-                        <button type="button" class="btn modal_btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Get A Quote</button>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Get A Quote</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="{{route('get_a_quote')}}" method="post">
-                                            @csrf
-                                            <div class="mb-3">
-                                                <input type="text" name="name" value="{{old('name')}}" class="form-control" id="recipient-name" placeholder="Name">
-                                            </div>
-                                            @error('name')
-                                            <strong class="text text-danger">{{$message}}</strong>
-                                            @enderror
-                                            <div class="mb-3">
-                                                <input type="text" name="business_name" value="{{old('business_name')}}" class="form-control" id="recipient-name" placeholder="Business Name">
-                                            </div>
-                                            @error('business_name')
-                                            <strong class="text text-danger">{{$message}}</strong>
-                                            @enderror
-                                            <div class="mb-3">
-                                                <input type="text" value="{{old('phone')}}" class="form-control" id="recipient-name" name="phone" placeholder="Phone">
-                                            </div>
-                                            @error('phone')
-                                            <strong class="text text-danger">{{$message}}</strong>
-                                            @enderror
-                                            <div class="mb-3">
-                                                <input type="email" name="email" value="{{old('email')}}" class="form-control" id="recipient-name" placeholder="Email">
-                                            </div>
-                                            @error('email')
-                                            <strong class="text text-danger">{{$message}}</strong>
-                                            @enderror
-                                            <div class="mb-3">
-                                                <textarea class="form-control" name="business_address" id="message-text" placeholder="Business Address">{{old('business_address')}}</textarea>
-                                            </div>
-                                            <div class="mb-3">
-                                                <input type="text" name="existing_website" value="{{old('existing_website')}}" class="form-control" id="recipient-name" placeholder="Existing Website(If any)">
-                                            </div>
-                                            <div class="mb-3">
-                                                <input type="date" name="date" class="form-control" id="recipient-name">
-                                            </div>
-                                            <div class="mb-3">
-                                                <select name="interested_in" class="form-select form-control  w-100" aria-label="Default select example" style="margin-bottom:1rem ;">
-                                                    <option selected>Interested in</option>
-                                                    <option value="1">Service1</option>
-                                                    <option value="2">Service2</option>
-                                                    <option value="3">Service3</option>
-                                                </select>
-                                            </div>
-                                            @error('interested_in')
-                                            <strong class="text text-danger">{{$message}}</strong>
-                                            @enderror
-                                            <div class="mb-3">
-                                                <textarea name="message" class="form-control" id="message-text" placeholder="Message">{{old('message')}}</textarea>
-                                            </div>
-                                            <button type="submit" class="btn eg-btn btn--primary" style="border: transparent;">Send message</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+		<div class="popup-newsletter">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						
+					</div>
+					<div class="col-sm-8">
+						<div class="popup">
+							<span></span>
+							<div class="popup-text">
+								<h2>Join our newsletter and <br />get discount!</h2>
+								<p class="subscribe">Subscribe to the newsletter to receive updates about new products.</p>
+								<div class="form-popup">
+									<form action="#" class="subscribe-form" method="get" accept-charset="utf-8">
+										<div class="subscribe-content">
+											<input type="text" name="email" class="subscribe-email" placeholder="Your E-Mail">
+											<button type="submit"><img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></button>
+										</div>
+									</form><!-- /.subscribe-form -->
+									<div class="checkbox">
+										<input type="checkbox" id="popup-not-show" name="category">
+										<label for="popup-not-show">Don't show this popup again</label>
+									</div>
+								</div><!-- /.form-popup -->
+							</div><!-- /.popup-text -->
+							<div class="popup-image">
+								<img src="{{asset('public/frontend')}}/images/banner_boxes/popup.png" alt="">
+							</div><!-- /.popup-text -->
+						</div><!-- /.popup -->
+					</div><!-- /.col-sm-8 -->
+					<div class="col-sm-2">
+						
+					</div>
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.popup-newsletter -->
 
-                        <ul class="header-top-right">
-                            <li class="social-icon">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-pinterest"></i></a>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <header class="header-area style-1">
-
-        <div class="header-logo">
-            <a href="{{url('/')}}"><img alt="image" src="{{asset('public/frontend')}}/assets/images/icons/logo.png" /></a>
-        </div>
-        <div class="main-nav">
-            <div class="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
-                <div class="mobile-logo-wrap">
-                    <a href="{{url('/')}}"><img alt="image" src="{{asset('public/frontend')}}/assets/images/icons/logo.png" /></a>
-                </div>
-                <div class="menu-close-btn">
-                    <i class="bi bi-x-lg text-white"></i>
-                </div>
-            </div>
-            <ul class="menu-list">
-                <li><a href="{{route('about_us')}}">About us</a></li>
-                <li class="menu-item-has-children">
-                    <a href="#" class="drop-down">Services</a><i class="bi bi-chevron-down dropdown-icon"></i>
-                    <ul class="sub-menu">
-                        @if(isset($services))
-                        @foreach($services as $list)
-                        <li><a href="{{url('service-details/'.@$list->slug)}}">{{@$list->title}}</a></li>
-                        @endforeach
-                        @endif
-                    </ul>
-                </li>
-                <li><a href="{{route('plans')}}">Plans</a></li>
-                <li class="menu-item-has-children">
-                    <a href="{{route('project')}}" class="drop-down">Projects</a><i class="bi bi-chevron-down dropdown-icon"></i>
-                    <ul class="sub-menu">
-                        @if(isset($project_cat))
-                        @foreach($project_cat as $list)
-                        <li><a href="{{url('project/'.$list->id)}}">{{$list->name}}</a></li>
-                        @endforeach
-                        @endif
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="{{route('blogs')}}">Blog</a>
-                </li>
-                <li><a href="{{route('careers')}}">Career</a></li>
-                <li><a href="{{route('contact')}}">Contact us</a></li>
-                <li><a href="{{route('faq')}}">FAQ</a></li>
-            </ul>
-        </div>
-        <div class="nav-right d-flex align-items-center gap-5">
-            <div class="mobile-menu-btn d-lg-none d-block">
-                <h5 class="text-white mb-0">MENU</h5>
-            </div>
-            <div class="eg-btn btn--primary header-btn">
-                <a href="{{route('stripe')}}">Pay Now</a>
-            </div>
-        </div>
-    </header>
+		<section id="header" class="header">
+			<div class="header-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4">
+							<ul class="flat-support">
+								<li>
+									<a href="faq.html" title="">Support</a>
+								</li>
+								<li>
+									<a href="store-location.html" title="">Store Locator</a>
+								</li>
+								<li>
+									<a href="order-tracking.html" title="">Track Your Order</a>
+								</li>
+							</ul><!-- /.flat-support -->
+						</div><!-- /.col-md-4 -->
+						<div class="col-md-4">
+							<ul class="flat-infomation">
+								<li class="phone">
+									Call Us: <a href="#" title="">(888) 1234 56789</a>
+								</li>
+							</ul><!-- /.flat-infomation -->
+						</div><!-- /.col-md-4 -->
+						<div class="col-md-4">
+							<ul class="flat-unstyled">
+								<li class="account">
+									<a href="#" title="">My Account<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+									<ul class="unstyled">
+										<li>
+											<a href="#" title="">Login</a>
+										</li>
+										<li>
+											<a href="wishlist.html" title="">Wishlist</a>
+										</li>
+										<li>
+											<a href="shop-cart.html" title="">My Cart</a>
+										</li>
+										<li>
+											<a href="my-account.html" title="">My Account</a>
+										</li>
+										<li>
+											<a href="shop-checkout.html" title="">Checkout</a>
+										</li>
+									</ul><!-- /.unstyled -->
+								</li>
+								<li>
+									<a href="#" title="">USD<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+									<ul class="unstyled">
+										<li>
+											<a href="#" title="">Euro</a>
+										</li>
+										<li>
+											<a href="#" title="">Dolar</a>
+										</li>
+									</ul><!-- /.unstyled -->
+								</li>
+								<li>
+									<a href="#" title="">English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+									<ul class="unstyled">
+										<li>
+											<a href="#" title="">Turkish</a>
+										</li>
+										<li>
+											<a href="#" title="">English</a>
+										</li>
+										<li>
+											<a href="#" title="">اللغة العربية</a>
+										</li>
+										<li>
+											<a href="#" title="">Español</a>
+										</li>
+										<li>
+											<a href="#" title="">Italiano</a>
+										</li>
+									</ul><!-- /.unstyled -->
+								</li>
+							</ul><!-- /.flat-unstyled -->
+						</div><!-- /.col-md-4 -->
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</div><!-- /.header-top -->
+			<div class="header-middle">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<div id="logo" class="logo">
+								<a href="index.html" title="">
+									<img src="{{asset('public/frontend')}}/images/logos/logo.png" alt="">
+								</a>
+							</div><!-- /#logo -->
+						</div><!-- /.col-md-3 -->
+						<div class="col-md-6">
+							<div class="top-search">
+								<form action="#" method="get" class="form-search" accept-charset="utf-8">
+									<div class="cat-wrap">
+										<select name="category">
+											<option hidden value="">All Category</option>
+											<option hidden value="">Cameras</option>
+											<option hidden value="">Computer</option>
+											<option hidden value="">Laptops</option>
+										</select>
+										<span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+										<div class="all-categories">
+											<div class="cat-list-search">
+												<div class="title">
+													Electronics
+												</div>
+												<ul>
+													<li>Components</li>
+													<li>Laptop</li>
+													<li>Monitor</li>
+													<li>Mp3 player</li>
+													<li>Scanners</li>
+												</ul>
+											</div><!-- /.cat-list-search -->
+											<div class="cat-list-search">
+												<div class="title">
+													Furniture
+												</div>
+												<ul>
+													<li>Bookcases</li>
+													<li>Barstools</li>
+													<li>TV stands</li>
+													<li>Desks</li>
+													<li>Accent chairs</li>
+												</ul>
+											</div><!-- /.cat-list-search -->
+											<div class="cat-list-search">
+												<div class="title">
+													Accessories
+												</div>
+												<ul>
+													<li>Software</li>
+													<li>Mobile</li>
+													<li>TV stands</li>
+													<li>Printers</li>
+													<li>Media</li>
+												</ul>
+											</div><!-- /.cat-list-search -->
+										</div><!-- /.all-categories -->
+									</div><!-- /.cat-wrap -->
+									<div class="box-search">
+										<input type="text" name="search" placeholder="Search what you looking for ?">
+										<span class="btn-search">
+											<button type="submit" class="waves-effect"><img src="{{asset('public/frontend')}}/images/icons/search.png" alt=""></button>
+										</span>
+										<div class="search-suggestions">
+											<div class="box-suggestions">
+												<div class="title">
+													Search Suggestions
+												</div>
+												<ul>
+													<li>
+														<div class="image">
+															<img src="{{asset('public/frontend')}}/images/product/other/s05.jpg" alt="">
+														</div>
+														<div class="info-product">
+															<div class="name">
+																<a href="#" title="">Razer RZ02-01071500-R3M1</a>
+															</div>
+															<div class="price">
+																<span class="sale">
+																	$50.00
+																</span>
+																<span class="regular">
+																	$2,999.00
+																</span>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="image">
+															<img src="{{asset('public/frontend')}}/images/product/other/s06.jpg" alt="">
+														</div>
+														<div class="info-product">
+															<div class="name">
+																<a href="#" title="">Notebook Black Spire V Nitro VN7-591G</a>
+															</div>
+															<div class="price">
+																<span class="sale">
+																	$24.00
+																</span>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="image">
+															<img src="{{asset('public/frontend')}}/images/product/other/14.jpg" alt="">
+														</div>
+														<div class="info-product">
+															<div class="name">
+																<a href="#" title="">Apple iPad Mini G2356</a>
+															</div>
+															<div class="price">
+																<span class="sale">
+																	$90.00
+																</span>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="image">
+															<img src="{{asset('public/frontend')}}/images/product/other/02.jpg" alt="">
+														</div>
+														<div class="info-product">
+															<div class="name">
+																<a href="#" title="">Razer RZ02-01071500-R3M1</a>
+															</div>
+															<div class="price">
+																<span class="sale">
+																	$50.00
+																</span>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="image">
+															<img src="{{asset('public/frontend')}}/images/product/other/l01.jpg" alt="">
+														</div>
+														<div class="info-product">
+															<div class="name">
+																<a href="#" title="">Apple iPad Mini G2356</a>
+															</div>
+															<div class="price">
+																<span class="sale">
+																	$24.00
+																</span>
+																<span class="regular">
+																	$2,999.00
+																</span>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="image">
+															<img src="{{asset('public/frontend')}}/images/product/other/s08.jpg" alt="">
+														</div>
+														<div class="info-product">
+															<div class="name">
+																<a href="#" title="">Beats Snarkitecture Headphones</a>
+															</div>
+															<div class="price">
+																<span class="sale">
+																	$90.00
+																</span>
+																<span class="regular">
+																	$2,999.00
+																</span>
+															</div>
+														</div>
+													</li>
+												</ul>
+											</div><!-- /.box-suggestions -->
+											<div class="box-cat">
+												<div class="cat-list-search">
+													<div class="title">
+														Categories
+													</div>
+													<ul>
+														<li>
+															<a href="#">Networking & Internet Devices</a>
+														</li>
+														<li>
+															<a href="#">Laptops, Desktops & Monitors</a>
+														</li>
+														<li>
+															<a href="#">Hard Drives & Memory Cards</a>
+														</li>
+														<li>
+															<a href="#">Printers & Ink</a>
+														</li>
+														<li>
+															<a href="#">Networking & Internet Devices</a>
+														</li>
+														<li>
+															<a href="#">Computer Accessories</a>
+														</li>
+														<li>
+															<a href="#">Software</a>
+														</li>
+													</ul>
+												</div><!-- /.cat-list-search -->
+											</div><!-- /.box-cat -->
+										</div><!-- /.search-suggestions -->
+									</div><!-- /.box-search -->
+								</form><!-- /.form-search -->
+							</div><!-- /.top-search -->
+						</div><!-- /.col-md-6 -->
+						<div class="col-md-3">
+							<div class="box-cart">
+								<div class="inner-box">
+									<ul class="menu-compare-wishlist">
+										<li class="compare">
+											<a href="compare.html" title="">
+												<img src="{{asset('public/frontend')}}/images/icons/compare.png" alt="">
+											</a>
+										</li>
+										<li class="wishlist">
+											<a href="wishlist.html" title="">
+												<img src="{{asset('public/frontend')}}/images/icons/wishlist.png" alt="">
+											</a>
+										</li>
+									</ul><!-- /.menu-compare-wishlist -->
+								</div><!-- /.inner-box -->
+								<div class="inner-box">
+									<a href="#" title="">
+										<div class="icon-cart">
+											<img src="{{asset('public/frontend')}}/images/icons/cart.png" alt="">
+											<span>4</span>
+										</div>
+										<div class="price">
+											$0.00
+										</div>
+									</a>
+									<div class="dropdown-box">
+										<ul>
+											<li>
+												<div class="img-product">
+													<img src="{{asset('public/frontend')}}/images/product/other/img-cart-1.jpg" alt="">
+												</div>
+												<div class="info-product">
+													<div class="name">
+														Samsung - Galaxy S6 4G LTE <br />with 32GB Memory Cell Phone
+													</div>
+													<div class="price">
+														<span>1 x</span>
+														<span>$250.00</span>
+													</div>
+												</div>
+												<div class="clearfix"></div>
+												<span class="delete">x</span>
+											</li>
+											<li>
+												<div class="img-product">
+													<img src="{{asset('public/frontend')}}/images/product/other/img-cart-2.jpg" alt="">
+												</div>
+												<div class="info-product">
+													<div class="name">
+														Sennheiser - Over-the-Ear Headphone System - Black
+													</div>
+													<div class="price">
+														<span>1 x</span>
+														<span>$250.00</span>
+													</div>
+												</div>
+												<div class="clearfix"></div>
+												<span class="delete">x</span>
+											</li>
+										</ul>
+										<div class="total">
+											<span>Subtotal:</span>
+											<span class="price">$1,999.00</span>
+										</div>
+										<div class="btn-cart">
+											<a href="shop-cart.html" class="view-cart" title="">View Cart</a>
+											<a href="shop-checkout.html" class="check-out" title="">Checkout</a>
+										</div>
+									</div>
+								</div><!-- /.inner-box -->
+							</div><!-- /.box-cart -->
+						</div><!-- /.col-md-3 -->
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</div><!-- /.header-middle -->
+			<div class="header-bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-2">
+							<div id="mega-menu">
+								<div class="btn-mega"><span></span>ALL CATEGORIES</div>
+								<ul class="menu">
+									<li>
+										<a href="#" title="" class="dropdown">
+											<span class="menu-img">
+												<img src="{{asset('public/frontend')}}/images/icons/menu/01.png" alt="">
+											</span>
+											<span class="menu-title">
+												Laptops & Mac
+											</span>
+										</a>
+										<div class="drop-menu">
+											<div class="one-third">
+												<div class="cat-title">
+													Laptop And Mac
+												</div>
+												<ul>
+													<li>
+														<a href="#" title="">Networking & Internet Devices</a>
+													</li>
+													<li>
+														<a href="#" title="">Laptops, Desktops & Monitors</a>
+													</li>
+													<li>
+														<a href="#" title="">Hard Drives & Memory Cards</a>
+													</li>
+													<li>
+														<a href="#" title="">Computer Accessories</a>
+													</li>
+													<li>
+														<a href="#" title="">Software</a>
+													</li>
+												</ul>
+												<div class="show">
+													<a href="#" title="">Shop All</a>
+												</div>
+											</div>
+											<div class="one-third">
+												<div class="cat-title">
+													Audio & Video
+												</div>
+												<ul>
+													<li>
+														<a href="#" title="">Headphones & Speakers</a>
+													</li>
+													<li>
+														<a href="#" title="">Home Entertainment Systems</a>
+													</li>
+													<li>
+														<a href="#" title="">MP3 & Media Players</a>
+													</li>
+													<li>
+														<a href="#" title="">Software</a>
+													</li>
+												</ul>
+												<div class="show">
+													<a href="#" title="">Shop All</a>
+												</div>
+											</div>
+											<div class="one-third">
+												<ul class="banner">
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																Headphones
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-01.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																TV & Audio
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-02.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																Computers
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-03.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+												</ul>	
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#" title="" class="dropdown">
+											<span class="menu-img">
+												<img src="{{asset('public/frontend')}}/images/icons/menu/02.png" alt="">
+											</span>
+											<span class="menu-title">
+												Mobile & Tablet
+											</span>
+										</a>
+										<div class="drop-menu">
+											<div class="one-third">
+												<div class="cat-title">
+													Laptop And Computer
+												</div>
+												<ul>
+													<li>
+														<a href="#" title="">Networking & Internet Devices</a>
+													</li>
+													<li>
+														<a href="#" title="">Laptops, Desktops & Monitors</a>
+													</li>
+													<li>
+														<a href="#" title="">Hard Drives & Memory Cards</a>
+													</li>
+													<li>
+														<a href="#" title="">Printers & Ink</a>
+													</li>
+													<li>
+														<a href="#" title="">Networking & Internet Devices</a>
+													</li>
+													<li>
+														<a href="#" title="">Computer Accessories</a>
+													</li>
+													<li>
+														<a href="#" title="">Software</a>
+													</li>
+												</ul>
+												<div class="show">
+													<a href="#" title="">Shop All</a>
+												</div>
+											</div>
+											<div class="one-third">
+												<div class="cat-title">
+													Audio & Video
+												</div>
+												<ul>
+													<li>
+														<a href="#" title="">Headphones & Speakers</a>
+													</li>
+													<li>
+														<a href="#" title="">Home Entertainment Systems</a>
+													</li>
+													<li>
+														<a href="#" title="">MP3 & Media Players</a>
+													</li>
+												</ul>
+												<div class="show">
+													<a href="#" title="">Shop All</a>
+												</div>
+											</div>
+											<div class="one-third">
+												<ul class="banner">
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																Headphones
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-01.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																TV & Audio
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-02.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																Computers
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-03.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+												</ul>	
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#" title="" class="dropdown">
+											<span class="menu-img">
+												<img src="{{asset('public/frontend')}}/images/icons/menu/03.png" alt="">
+											</span>
+											<span class="menu-title">
+												Home Devices
+											</span>
+										</a>
+										<div class="drop-menu">
+											<div class="one-third">
+												<div class="cat-title">
+													Home Devices
+												</div>
+												<ul>
+													<li>
+														<a href="#" title="">Internet Devices</a>
+													</li>
+													<li>
+														<a href="#" title="">Desktops & Monitors</a>
+													</li>
+													<li>
+														<a href="#" title="">Hard Drives & Memory Cards</a>
+													</li>
+													<li>
+														<a href="#" title="">Networking</a>
+													</li>
+													<li>
+														<a href="#" title="">Software</a>
+													</li>
+												</ul>
+												<div class="show">
+													<a href="#" title="">Shop All</a>
+												</div>
+											</div>
+											<div class="one-third">
+												<div class="cat-title">
+													Audio
+												</div>
+												<ul>
+													<li>
+														<a href="#" title="">Home Entertainment Systems</a>
+													</li>
+													<li>
+														<a href="#" title="">MP3 & Media Players</a>
+													</li>
+													<li>
+														<a href="#" title="">Software</a>
+													</li>
+												</ul>
+												<div class="show">
+													<a href="#" title="">Shop All</a>
+												</div>
+											</div>
+											<div class="one-third">
+												<ul class="banner">
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																Headphones
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-01.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																TV & Audio
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-02.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																Computers
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-03.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+												</ul>	
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#" title="">
+											<span class="menu-img">
+												<img src="{{asset('public/frontend')}}/images/icons/menu/04.png" alt="">
+											</span>
+											<span class="menu-title">
+												Software
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="">
+											<span class="menu-img">
+												<img src="{{asset('public/frontend')}}/images/icons/menu/05.png" alt="">
+											</span>
+											<span class="menu-title">
+												TV & Audio
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="">
+											<span class="menu-img">
+												<img src="{{asset('public/frontend')}}/images/icons/menu/06.png" alt="">
+											</span>
+											<span class="menu-title">
+												Sports & Fitness
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="" class="dropdown">
+											<span class="menu-img">
+												<img src="{{asset('public/frontend')}}/images/icons/menu/07.png" alt="">
+											</span>
+											<span class="menu-title">
+												Games & Toys
+											</span>
+										</a>
+										<div class="drop-menu">
+											<div class="one-third">
+												<div class="cat-title">
+													Games & Toys
+												</div>
+												<ul>
+													<li>
+														<a href="#" title="">Internet Devices</a>
+													</li>
+													<li>
+														<a href="#" title="">Desktops & Monitors</a>
+													</li>
+													<li>
+														<a href="#" title="">Hard Drives & Memory Cards</a>
+													</li>
+													<li>
+														<a href="#" title="">Networking</a>
+													</li>
+													<li>
+														<a href="#" title="">Software</a>
+													</li>
+												</ul>
+												<div class="show">
+													<a href="#" title="">Shop All</a>
+												</div>
+											</div>
+											<div class="one-third">
+												<div class="cat-title">
+													Audio
+												</div>
+												<ul>
+													<li>
+														<a href="#" title="">Home Entertainment Systems</a>
+													</li>
+													<li>
+														<a href="#" title="">MP3 & Media Players</a>
+													</li>
+													<li>
+														<a href="#" title="">Software</a>
+													</li>
+												</ul>
+												<div class="show">
+													<a href="#" title="">Shop All</a>
+												</div>
+											</div>
+											<div class="one-third">
+												<ul class="banner">
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																Headphones
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-01.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																TV & Audio
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-02.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																Computers
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-03.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+												</ul>	
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#" title="">
+											<span class="menu-img">
+												<img src="{{asset('public/frontend')}}/images/icons/menu/08.png" alt="">
+											</span>
+											<span class="menu-title">
+												Video Cameras
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="" class="dropdown">
+											<span class="menu-img">
+												<img src="{{asset('public/frontend')}}/images/icons/menu/09.png" alt="">
+											</span>
+											<span class="menu-title">
+												Accessories
+											</span>
+										</a>
+										<div class="drop-menu">
+											<div class="one-third">
+												<div class="cat-title">
+													Accessories
+												</div>
+												<ul>
+													<li>
+														<a href="#" title="">Internet Devices</a>
+													</li>
+													<li>
+														<a href="#" title="">Desktops & Monitors</a>
+													</li>
+													<li>
+														<a href="#" title="">Hard Drives & Memory Cards</a>
+													</li>
+													<li>
+														<a href="#" title="">Networking</a>
+													</li>
+													<li>
+														<a href="#" title="">Software</a>
+													</li>
+												</ul>
+												<div class="show">
+													<a href="#" title="">Shop All</a>
+												</div>
+											</div>
+											<div class="one-third">
+												<div class="cat-title">
+													Audio
+												</div>
+												<ul>
+													<li>
+														<a href="#" title="">Home Entertainment Systems</a>
+													</li>
+													<li>
+														<a href="#" title="">MP3 & Media Players</a>
+													</li>
+													<li>
+														<a href="#" title="">Software</a>
+													</li>
+												</ul>
+												<div class="show">
+													<a href="#" title="">Shop All</a>
+												</div>
+											</div>
+											<div class="one-third">
+												<ul class="banner">
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																Headphones
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-01.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																TV & Audio
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-02.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																Computers
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-03.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+												</ul>	
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#" title="" class="dropdown">
+											<span class="menu-img">
+												<img src="{{asset('public/frontend')}}/images/icons/menu/10.png" alt="">
+											</span>
+											<span class="menu-title">
+												Security
+											</span>
+										</a>
+										<div class="drop-menu">
+											<div class="one-third">
+												<div class="cat-title">
+													Security
+												</div>
+												<ul>
+													<li>
+														<a href="#" title="">Internet Devices</a>
+													</li>
+													<li>
+														<a href="#" title="">Desktops & Monitors</a>
+													</li>
+													<li>
+														<a href="#" title="">Hard Drives & Memory Cards</a>
+													</li>
+													<li>
+														<a href="#" title="">Networking</a>
+													</li>
+													<li>
+														<a href="#" title="">Software</a>
+													</li>
+												</ul>
+												<div class="show">
+													<a href="#" title="">Shop All</a>
+												</div>
+											</div>
+											<div class="one-third">
+												<div class="cat-title">
+													Audio
+												</div>
+												<ul>
+													<li>
+														<a href="#" title="">Home Entertainment Systems</a>
+													</li>
+													<li>
+														<a href="#" title="">MP3 & Media Players</a>
+													</li>
+													<li>
+														<a href="#" title="">Software</a>
+													</li>
+													<li>
+														<a href="#" title="">Hard Drives & Memory Cards</a>
+													</li>
+													<li>
+														<a href="#" title="">Networking</a>
+													</li>
+												</ul>
+												<div class="show">
+													<a href="#" title="">Shop All</a>
+												</div>
+											</div>
+											<div class="one-third">
+												<ul class="banner">
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																Headphones
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-01.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																TV & Audio
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-02.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+													<li>
+														<div class="banner-text">
+															<div class="banner-title">
+																Computers
+															</div>
+															<div class="more-link">
+																<a href="#" title="">Shop Now <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+															</div>
+														</div>
+														<div class="banner-img">
+															<img src="{{asset('public/frontend')}}/images/banner_boxes/menu-03.png" alt="">
+														</div>
+														<div class="clearfix"></div>
+													</li>
+												</ul>	
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div><!-- /.col-md-3 -->
+						<div class="col-md-9 col-10">
+							<div class="nav-wrap">
+								<div id="mainnav" class="mainnav">
+									<ul class="menu">
+										<li class="column-1">
+											<a href="index.html" title="">Home</a>
+											<ul class="submenu">
+												<li>
+													<a href="index.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Home Layout 01</a>
+												</li>
+											</ul>
+										</li><!-- /.column-1 -->
+										
+										<li class="column-1">
+											<a href="blog.html" title="">Blog</a>
+											<ul class="submenu">
+												<li>
+													<a href="blog.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Blog left sidebar</a>
+												</li>
+												<li>
+													<a href="blog-v2.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Blog right sidebar</a>
+												</li>
+												<li>
+													<a href="blog-v3.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Blog list</a>
+												</li>
+												<li>
+													<a href="blog-v4.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Blog 02 column</a>
+												</li>
+												<li>
+													<a href="blog-v5.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Blog full width</a>
+												</li>
+												<li>
+													<a href="blog-single.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Blog single</a>
+												</li>
+											</ul><!-- /.submenu -->
+										</li><!-- /.column-1 -->
+										<li class="column-1">
+											<a href="contact.html" title="">Contact</a>
+											<ul class="submenu">
+												<li>
+													<a href="contact.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Contact 01</a>
+												</li>
+												<li>
+													<a href="contact-v2.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Contact 02</a>
+												</li>
+											</ul><!-- /.submenu -->
+										</li><!-- /.column-1 -->
+									</ul><!-- /.menu -->
+								</div><!-- /.mainnav -->
+							</div><!-- /.nav-wrap -->
+							
+							<div class="btn-menu">
+	                            <span></span>
+	                        </div><!-- //mobile menu button -->
+						</div><!-- /.col-md-9 -->
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</div><!-- /.header-bottom -->
+		</section><!-- /#header -->

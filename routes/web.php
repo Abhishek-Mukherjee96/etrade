@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Frontend\FrontendController;
 
 //ADMIN ROUTE
 Route::group(['middleware' => 'auth'], function () {
@@ -40,5 +41,8 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/admin/login', [AdminAuthController::class, 'admin_login'])->name('login');
     Route::post('/admin-login-action', [AdminAuthController::class, 'admin_login_action'])->name('admin.login.action');
+    Route::get('/', [FrontendController::class, 'index'])->name('index');
+    Route::get('/product-details', [FrontendController::class, 'product_details'])->name('product_details');
+
 
 });
