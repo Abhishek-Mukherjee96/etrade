@@ -114,8 +114,8 @@ class ProductController extends Controller
 
     //GET ALL PRODUCT
     public function product_list(){
-        $category_list = Product::latest()->get();
-        return view('admin.product.index',compact('category_list'));
+        $product_list = Product::latest()->get();
+        return view('admin.product.index',compact('product_list'));
     }
 
     //LOAD ADD FORM
@@ -133,7 +133,6 @@ class ProductController extends Controller
             'short_desc' => 'required',
             'description' => 'required',
             'product_img' => 'required',
-            'slug' => 'required|unique:products,slug'
         ]);
 
         $add_product = new Product();
@@ -156,12 +155,11 @@ class ProductController extends Controller
 
         $add_product->cat_id = $req->cat_id;
         $add_product->title = $req->title;
-        $add_product->slug = Str::slug($req->title);
+        $add_product->product_slug = Str::slug($req->title);
         $add_product->regular_price = $req->regular_price;
         $add_product->selling_price = $req->selling_price;
         $add_product->short_desc = $req->short_desc;
         $add_product->description = $req->description;
-        $add_product->additional_info = $req->additional_info;
         $add_product->product_gallery = $logo;
         $add_product->status = 1;
 
@@ -201,12 +199,11 @@ class ProductController extends Controller
         $logo = json_encode($fileName);
         $update_product->cat_id = $req->cat_id;
         $update_product->title = $req->title;
-        $update_product->slug = Str::slug($req->title);
+        $update_product->product_slug = Str::slug($req->title);
         $update_product->regular_price = $req->regular_price;
         $update_product->selling_price = $req->selling_price;
         $update_product->short_desc = $req->short_desc;
         $update_product->description = $req->description;
-        $update_product->additional_info = $req->additional_info;
         $update_product->product_gallery = $logo;
         $update_product->status = 1;
 

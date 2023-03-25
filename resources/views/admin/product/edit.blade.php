@@ -70,24 +70,17 @@
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
-                                        <div class="col-md-4 mb-3">
+                                        <div class="col-md-6 mb-3">
                                             <label><strong>Image:</strong></label>
                                             <input class="form-control mb-4" type="file" name="product_img">
                                             @error('product_img')
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
-                                        <div class="col-md-4 mb-3">
+                                        <div class="col-md-6 mb-3">
                                             <label><strong>Image Gallery:</strong></label>
                                             <input class="form-control mb-4" type="file" name="product_gallery[]" multiple>
                                             @error('product_gallery')
-                                            <span class="text text-danger">{{$message}}</span>
-                                            @enderror
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <label><strong>Slug:</strong></label>
-                                            <input class="form-control mb-4" type="text" placeholder="Slug" name="slug" value="{{$edit_product->slug}}">
-                                            @error('slug')
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
@@ -95,13 +88,6 @@
                                             <label><strong>Short Description:</strong></label>
                                             <textarea class="form-control" placeholder="Short Description" name="short_desc">{{$edit_product->short_desc}}</textarea>
                                             @error('short_desc')
-                                            <span class="text text-danger">{{$message}}</span>
-                                            @enderror
-                                        </div>
-                                        <div class="col-md-12 mb-3">
-                                            <label><strong>Additional Info:</strong></label>
-                                            <textarea class="form-control" placeholder="Additional Info" name="additional_info">{{$edit_product->additional_info}}</textarea>
-                                            @error('additional_info')
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>

@@ -52,8 +52,8 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @if(isset($category_list))
-                                                @foreach($category_list as $list)
+                                                @if(isset($product_list))
+                                                @foreach($product_list as $list)
                                                 <tr>
                                                     <td>{{$list->id}}</td>
                                                     <td>{{$list->title}}</td>
@@ -61,7 +61,10 @@
                                                         <img src="{{asset('public/admin/assets/product/'.$list->product_img)}}" width="75px">
                                                     </td>
                                                     <td>{{$list->slug}}</td>
-                                                    <td>1</td>
+                                                    @php
+                                                    $cat_name = DB::table('product_categories')->where('id',$list->cat_id)->first();
+                                                    @endphp
+                                                    <td>{{$cat_name->name}}</td>
                                                     <td>
                                                         @if($list->status == '1')
                                                         <a href="{{route('update_product_status', $list->id)}}" class="btn btn-success btn-sm">Active</a>

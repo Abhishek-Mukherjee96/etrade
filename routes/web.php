@@ -42,7 +42,8 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('/admin/login', [AdminAuthController::class, 'admin_login'])->name('login');
     Route::post('/admin-login-action', [AdminAuthController::class, 'admin_login_action'])->name('admin.login.action');
     Route::get('/', [FrontendController::class, 'index'])->name('index');
-    Route::get('/product-details', [FrontendController::class, 'product_details'])->name('product_details');
+    Route::get('/product-details/{slug}', [FrontendController::class, 'product_details'])->name('product_details');
+    Route::get('/category/{id}', [FrontendController::class, 'product_cat'])->name('product_cat');
 
 
 });
