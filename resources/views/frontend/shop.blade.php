@@ -281,15 +281,14 @@
                                         <span class="item-new">NEW</span>
                                         <div class="box-image owl-carousel-1">
                                             @foreach(json_decode($product->product_gallery, true) as $list)
-
                                             <a href="{{url('product-details/'.@$product->product_slug)}}" title="">
-                                                <img src="{{asset('public/admin/assets/product/'.$list)}}" alt="">
+                                                <img src="{{asset('public/admin/assets/product/'.$list)}}" height="264" width="210" alt="">
                                             </a>
                                             @endforeach
                                         </div><!-- /.box-image -->
                                         <div class="box-content">
                                             <div class="cat-name">
-                                                <a href="#" title="">Laptops</a>
+                                                <a href="#" title="">{{@$product->name}}</a>
                                             </div>
                                             <div class="product-name">
                                                 <a href="{{url('product-details/'.@$product->product_slug)}}" title="">{{$product->title}}</a>
@@ -318,6 +317,8 @@
                                 </div><!-- /.product-box -->
                             </div><!-- /.col-md-4 col-sm-6 -->
                             @endforeach
+                            @else
+                            <span class="text-danger">No Data Found</span>
                             @endif
                             <div class="divider10"></div>
 

@@ -248,47 +248,16 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 								<div id="mainnav" class="mainnav">
 									<ul class="menu">
 										<li class="column-1">
-											<a href="index.html" title="">Home</a>
-											<ul class="submenu">
-												<li>
-													<a href="index.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Home Layout 01</a>
-												</li>
-											</ul>
+											<a href="{{url('/')}}" title="">Home</a>
 										</li><!-- /.column-1 -->
-
+										<li class="column-1">
+											<a href="{{route('shop')}}" title="">Shop</a>
+										</li><!-- /.column-1 -->
 										<li class="column-1">
 											<a href="blog.html" title="">Blog</a>
-											<ul class="submenu">
-												<li>
-													<a href="blog.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Blog left sidebar</a>
-												</li>
-												<li>
-													<a href="blog-v2.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Blog right sidebar</a>
-												</li>
-												<li>
-													<a href="blog-v3.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Blog list</a>
-												</li>
-												<li>
-													<a href="blog-v4.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Blog 02 column</a>
-												</li>
-												<li>
-													<a href="blog-v5.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Blog full width</a>
-												</li>
-												<li>
-													<a href="blog-single.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Blog single</a>
-												</li>
-											</ul><!-- /.submenu -->
 										</li><!-- /.column-1 -->
 										<li class="column-1">
 											<a href="contact.html" title="">Contact</a>
-											<ul class="submenu">
-												<li>
-													<a href="contact.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Contact 01</a>
-												</li>
-												<li>
-													<a href="contact-v2.html" title=""><i class="fa fa-angle-right" aria-hidden="true"></i>Contact 02</a>
-												</li>
-											</ul><!-- /.submenu -->
 										</li><!-- /.column-1 -->
 									</ul><!-- /.menu -->
 								</div><!-- /.mainnav -->

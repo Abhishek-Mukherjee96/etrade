@@ -44,6 +44,7 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('/', [FrontendController::class, 'index'])->name('index');
     Route::get('/product-details/{slug}', [FrontendController::class, 'product_details'])->name('product_details');
     Route::get('/category/{id}', [FrontendController::class, 'product_cat'])->name('product_cat');
+    Route::get('/shop', [FrontendController::class, 'shop'])->name('shop');
 
 
 });

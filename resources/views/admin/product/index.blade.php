@@ -60,7 +60,7 @@
                                                     <td>
                                                         <img src="{{asset('public/admin/assets/product/'.$list->product_img)}}" width="75px">
                                                     </td>
-                                                    <td>{{$list->slug}}</td>
+                                                    <td>{{$list->product_slug}}</td>
                                                     @php
                                                     $cat_name = DB::table('product_categories')->where('id',$list->cat_id)->first();
                                                     @endphp
