@@ -44,10 +44,12 @@
                                         <div class="col-md-3 mb-3">
                                             <label><strong>Category:</strong></label>
                                             <select name="cat_id" class="form-control">
-                                                @if(isset($category))
-                                                @foreach($category as $cat)
-                                                <optgroup label="{{$cat->parent_category}}">
-                                                    <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                                @if(isset($cat_list))
+                                                @foreach($cat_list as $cat)
+                                                <optgroup label="{{$cat['name']}}">
+                                                    @foreach($cat['childs'] as $child_cat)
+                                                    <option value="{{$child_cat['id']}}">{{$child_cat['name']}}</option>
+                                                    @endforeach
                                                 </optgroup>
                                                 @endforeach
                                                 @endif

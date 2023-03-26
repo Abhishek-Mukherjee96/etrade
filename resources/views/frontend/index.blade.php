@@ -515,9 +515,7 @@
 							</div><!-- /.box-bottom -->
 						</div><!-- /.imagebox -->
 					</div>
-					
 				</div><!-- /.col-lg-3 col-sm-6 -->
-				
 			</div><!-- /.row -->
 			<div class="row">
 				<div class="col-lg-3 col-sm-6">

@@ -120,8 +120,15 @@ class ProductController extends Controller
 
     //LOAD ADD FORM
     public function add_product(){
-        $category = ProductCategory::where('status',1)->get();
-        return view('admin.product.add',compact('category'));
+        $cat_list = ProductCategory::all()->toArray();
+
+        for($i=0; $i<count($cat_list); $i++){
+            $cat_list[$i]["childs"] = ProductCategory::where('parent_category','=',$cat_list[$i]['id'])->get()->toArray();
+           
+        }
+        //dd($cat_list);
+
+        return view('admin.product.add',compact('cat_list'));
     }
 
     //ADD PRODUCT
