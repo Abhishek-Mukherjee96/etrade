@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Frontend\UserAuthController;
 
 //ADMIN ROUTE
 Route::group(['middleware' => 'auth'], function () {
@@ -34,10 +35,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/edit-product-action/{id}', [ProductController::class, 'edit_product_action'])->name('edit_product_action');
     Route::get('/delete-product-action/{id}', [ProductController::class, 'delete_product_action'])->name('delete_product_action');
     Route::get('/update-product-status/{id}', [ProductController::class, 'update_product_status'])->name('update_product_status');
-
 });
 
 //FRONTEND ROUTE
+
+Route::post('/register', [UserAuthController::class, 'register'])->name('user.register');
+Route::post('/login', [UserAuthController::class, 'user_login'])->name('user.login');
+Route::get('/user-logout', [UserAuthController::class, 'user_logout'])->name('user.logout');
+
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/admin/login', [AdminAuthController::class, 'admin_login'])->name('login');
     Route::post('/admin-login-action', [AdminAuthController::class, 'admin_login_action'])->name('admin.login.action');
@@ -45,6 +50,4 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('/product-details/{slug}', [FrontendController::class, 'product_details'])->name('product_details');
     Route::get('/category/{id}', [FrontendController::class, 'product_cat'])->name('product_cat');
     Route::get('/shop', [FrontendController::class, 'shop'])->name('shop');
-
-
 });

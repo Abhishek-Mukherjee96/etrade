@@ -12,12 +12,16 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="{{asset('public/frontend')}}/stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/frontend')}}/stylesheets/bootstrap.min.css">
 
 	<link rel="stylesheet" type="text/css" href="{{asset('public/frontend')}}/stylesheets/style.css">
 
 	<link rel="stylesheet" type="text/css" href="{{asset('public/frontend')}}/stylesheets/responsive.css">
 
 	<link rel="shortcut icon" href="{{asset('public/frontend')}}/favicon/favicon.png">
+
+	<!-- sweetalert js -->
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 
 </head>
 
@@ -32,43 +36,6 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 				<span></span>
 			</div>
 		</div><!-- /.preloader -->
-
-		<div class="popup-newsletter">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-2">
-
-					</div>
-					<div class="col-sm-8">
-						<div class="popup">
-							<span></span>
-							<div class="popup-text">
-								<h2>Join our newsletter and <br />get discount!</h2>
-								<p class="subscribe">Subscribe to the newsletter to receive updates about new products.</p>
-								<div class="form-popup">
-									<form action="#" class="subscribe-form" method="get" accept-charset="utf-8">
-										<div class="subscribe-content">
-											<input type="text" name="email" class="subscribe-email" placeholder="Your E-Mail">
-											<button type="submit"><img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></button>
-										</div>
-									</form><!-- /.subscribe-form -->
-									<div class="checkbox">
-										<input type="checkbox" id="popup-not-show" name="category">
-										<label for="popup-not-show">Don't show this popup again</label>
-									</div>
-								</div><!-- /.form-popup -->
-							</div><!-- /.popup-text -->
-							<div class="popup-image">
-								<img src="{{asset('public/frontend')}}/images/banner_boxes/popup.png" alt="">
-							</div><!-- /.popup-text -->
-						</div><!-- /.popup -->
-					</div><!-- /.col-sm-8 -->
-					<div class="col-sm-2">
-
-					</div>
-				</div><!-- /.row -->
-			</div><!-- /.container -->
-		</div><!-- /.popup-newsletter -->
 
 		<section id="header" class="header">
 			<div class="header-top">
@@ -100,7 +67,13 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 									<a href="#" title="">My Account<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="unstyled">
 										<li>
-											<a href="#" title="">Login</a>
+											<a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+										</li>
+										<li>
+											<a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+										</li>
+										<li>
+											<a href="{{route('user.logout')}}">Logout</a>
 										</li>
 										<li>
 											<a href="wishlist.html" title="">Wishlist</a>
@@ -234,7 +207,7 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 												<img src="{{asset('public/admin/assets/category/'.$category->image)}}" height="20" width="27" alt="">
 											</span>
 											<span class="menu-title">
-											{{$category->name}}
+												{{$category->name}}
 											</span>
 										</a>
 									</li>
@@ -271,3 +244,81 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 				</div><!-- /.container -->
 			</div><!-- /.header-bottom -->
 		</section><!-- /#header -->
+
+		<!-- Modal -->
+		<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header" style="background: #F28B00;">
+						<h1 class="modal-title fs-5 text-white" id="loginModalLabel">Login</h1>
+						<a href="#" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">X</a>
+					</div>
+					<div class="modal-body">
+						<form method="post" action="{{route('user.login')}}">
+							@csrf
+							<div class="mb-3">
+								<label>Email</label>
+								<input type="email" class="form-control" name="email" placeholder="Email">
+								@error('name')
+								<strong class="text-danger">{{$message}}</strong>
+								@enderror
+							</div>
+							<div class="mb-3">
+								<label>Password</label>
+								<input type="password" class="form-control" name="password" placeholder="Password">
+								@error('password')
+								<strong class="text-danger">{{$message}}</strong>
+								@enderror
+							</div>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header" style="background: #F28B00;">
+						<h1 class="modal-title fs-5 text-white" id="registerModalLabel">Register</h1>
+						<a href="#" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">X</a>
+					</div>
+					<div class="modal-body">
+						<form method="post" action="{{route('user.register')}}">
+							@csrf
+							<div class="mb-3">
+								<label>Name</label>
+								<input type="text" class="form-control" value="{{old('name')}}" name="name" placeholder="Name">
+								@error('name')
+								<strong class="text-danger">{{$message}}</strong>
+								@enderror
+							</div>
+							<div class="mb-3">
+								<label>Email</label>
+								<input type="email" class="form-control" value="{{old('email')}}" name="email" placeholder="Email">
+								@error('email')
+								<strong class="text-danger">{{$message}}</strong>
+								@enderror
+							</div>
+							<div class="mb-3">
+								<label>Phone</label>
+								<input type="text" class="form-control" value="{{old('phone_number')}}" name="phone_number" placeholder="Phone">
+								@error('phone_number')
+								<strong class="text-danger">{{$message}}</strong>
+								@enderror
+							</div>
+							<div class="mb-3">
+								<label>Password</label>
+								<input type="password" class="form-control" value="{{old('password')}}" name="password" placeholder="Password">
+								@error('password')
+								<strong class="text-danger">{{$message}}</strong>
+								@enderror
+							</div>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>

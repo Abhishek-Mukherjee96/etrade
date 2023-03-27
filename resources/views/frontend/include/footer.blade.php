@@ -226,6 +226,8 @@
 </div><!-- /.boxed -->
 
 <!-- Javascript -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="{{asset('public/frontend')}}/javascript/jquery.min.js"></script>
 <script type="text/javascript" src="{{asset('public/frontend')}}/javascript/tether.min.js"></script>
 <script type="text/javascript" src="{{asset('public/frontend')}}/javascript/bootstrap.min.js"></script>
@@ -242,8 +244,33 @@
 <script type="text/javascript" src="{{asset('public/frontend')}}/javascript/jquery.countdown.js"></script>
 <script type="text/javascript" src="{{asset('public/frontend')}}/javascript/main.js"></script>
 
+<!-- sweetalert js -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+
 </body>
 
 <!-- Mirrored from creativelayers.net/themes/techno-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Mar 2023 18:11:47 GMT -->
 
 </html>
+
+@if(Session::has('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Thank You!',
+        text: '{{ Session::get("success") }} 🙂',
+        showConfirmButton: false,
+        timer: 3000
+    });
+</script>
+@elseif(Session::has('error'))
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: '{{ Session::get("error") }}',
+        showConfirmButton: false,
+        timer: 3000
+    });
+</script>
+@endif
