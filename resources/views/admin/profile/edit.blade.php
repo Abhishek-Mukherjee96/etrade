@@ -38,9 +38,9 @@ $profile_details = User::where('id', Auth::user()->id)->select('users.*')->first
                     <div class="col-xl-3 col-lg-3 col-md-12">
                         <div class="card box-widget widget-user">
                             @if($profile_details->image)
-                            <div class="widget-user-image mx-auto mt-5"><img alt="User Avatar" class="rounded-circle" src="{{asset('public/admin/assets/images/user-profile/'.$profile_details->image)}}"></div>
+                            <div class="widget-user-image mx-auto mt-5"><img alt="User Avatar" class="rounded-circle" src="{{asset('/admin/assets/images/user-profile/'.$profile_details->image)}}"></div>
                             @else
-                            <div class="widget-user-image mx-auto mt-5"><img alt="User Avatar" class="rounded-circle" src="{{asset('public/admin/assets/images/user-profile/avatar.png')}}"></div>
+                            <div class="widget-user-image mx-auto mt-5"><img alt="User Avatar" class="rounded-circle" src="{{asset('/admin/assets/images/user-profile/avatar.png')}}"></div>
                             @endif
                             <div class="card-body text-center">
                                 <div class="pro-user">

@@ -10,19 +10,19 @@ $profile_details = User::where('id', Auth::user()->id)->select('users.*')->first
 <aside class="app-sidebar">
     <div class="app-sidebar__logo">
         <a class="header-brand" href="{{route('dashboard')}}">
-            <img src="{{asset('public/admin')}}/assets/images/brand/logo.png" class="header-brand-img desktop-lgo" alt="Admintro logo">
-            <img src="{{asset('public/admin')}}/assets/images/brand/logo.png" class="header-brand-img dark-logo" alt="Admintro logo">
-            <img src="{{asset('public/admin')}}/assets/images/brand/logo.png" class="header-brand-img mobile-logo" alt="Admintro logo">
-            <img src="{{asset('public/admin')}}/assets/images/brand/logo.png" class="header-brand-img darkmobile-logo" alt="Admintro logo">
+            <img src="{{asset('/admin')}}/assets/images/brand/logo.png" class="header-brand-img desktop-lgo" alt="Admintro logo">
+            <img src="{{asset('/admin')}}/assets/images/brand/logo.png" class="header-brand-img dark-logo" alt="Admintro logo">
+            <img src="{{asset('/admin')}}/assets/images/brand/logo.png" class="header-brand-img mobile-logo" alt="Admintro logo">
+            <img src="{{asset('/admin')}}/assets/images/brand/logo.png" class="header-brand-img darkmobile-logo" alt="Admintro logo">
         </a>
     </div>
     <div class="app-sidebar__user">
         <div class="dropdown user-pro-body text-center">
             <div class="user-pic">
                 @if($profile_details->image)
-                <img src="{{asset('public/admin/assets/images/user-profile/'.$profile_details->image)}}" alt="user-img" class="avatar-xl rounded-circle mb-1">
+                <img src="{{asset('/admin/assets/images/user-profile/'.$profile_details->image)}}" alt="user-img" class="avatar-xl rounded-circle mb-1">
                 @else
-                <div class="widget-user-image mx-auto mt-5"><img alt="User Avatar" class="rounded-circle" src="{{asset('public/admin/assets/images/user-profile/avatar.png')}}"></div>
+                <div class="widget-user-image mx-auto mt-5"><img alt="User Avatar" class="rounded-circle" src="{{asset('/admin/assets/images/user-profile/avatar.png')}}"></div>
                 @endif
             </div>
             <div class="user-info">

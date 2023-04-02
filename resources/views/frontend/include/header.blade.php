@@ -8,17 +8,19 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 <head>
 	<meta charset="UTF-8">
 	<meta name="author" content="CreativeLayers">
+	<!-- csrf token -->
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link rel="stylesheet" type="text/css" href="{{asset('public/frontend')}}/stylesheets/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="{{asset('public/frontend')}}/stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('/frontend')}}/stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('/frontend')}}/stylesheets/bootstrap.min.css">
 
-	<link rel="stylesheet" type="text/css" href="{{asset('public/frontend')}}/stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('/frontend')}}/stylesheets/style.css">
 
-	<link rel="stylesheet" type="text/css" href="{{asset('public/frontend')}}/stylesheets/responsive.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('/frontend')}}/stylesheets/responsive.css">
 
-	<link rel="shortcut icon" href="{{asset('public/frontend')}}/favicon/favicon.png">
+	<link rel="shortcut icon" href="{{asset('/frontend')}}/favicon/favicon.png">
 
 	<!-- sweetalert js -->
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
@@ -72,9 +74,11 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 										<li>
 											<a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
 										</li>
+										@if(Auth::check())
 										<li>
 											<a href="{{route('user.logout')}}">Logout</a>
 										</li>
+										@endif
 										<li>
 											<a href="wishlist.html" title="">Wishlist</a>
 										</li>
@@ -100,7 +104,7 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 						<div class="col-md-3">
 							<div id="logo" class="logo">
 								<a href="{{url('/')}}" title="">
-									<img src="{{asset('public/frontend')}}/images/logos/logo.png" alt="">
+									<img src="{{asset('/frontend')}}/images/logos/logo.png" alt="">
 								</a>
 							</div><!-- /#logo -->
 						</div><!-- /.col-md-3 -->
@@ -110,7 +114,7 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 									<div class="box-search">
 										<input type="text" name="search" placeholder="Search what you looking for ?">
 										<span class="btn-search">
-											<button type="submit" class="waves-effect"><img src="{{asset('public/frontend')}}/images/icons/search.png" alt=""></button>
+											<button type="submit" class="waves-effect"><img src="{{asset('/frontend')}}/images/icons/search.png" alt=""></button>
 										</span>
 									</div><!-- /.box-search -->
 								</form><!-- /.form-search -->
@@ -122,12 +126,12 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 									<ul class="menu-compare-wishlist">
 										<li class="compare">
 											<a href="compare.html" title="">
-												<img src="{{asset('public/frontend')}}/images/icons/compare.png" alt="">
+												<img src="{{asset('/frontend')}}/images/icons/compare.png" alt="">
 											</a>
 										</li>
 										<li class="wishlist">
 											<a href="wishlist.html" title="">
-												<img src="{{asset('public/frontend')}}/images/icons/wishlist.png" alt="">
+												<img src="{{asset('/frontend')}}/images/icons/wishlist.png" alt="">
 											</a>
 										</li>
 									</ul><!-- /.menu-compare-wishlist -->
@@ -135,7 +139,7 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 								<div class="inner-box">
 									<a href="#" title="">
 										<div class="icon-cart">
-											<img src="{{asset('public/frontend')}}/images/icons/cart.png" alt="">
+											<img src="{{asset('/frontend')}}/images/icons/cart.png" alt="">
 											<span>4</span>
 										</div>
 										<div class="price">
@@ -146,7 +150,7 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 										<ul>
 											<li>
 												<div class="img-product">
-													<img src="{{asset('public/frontend')}}/images/product/other/img-cart-1.jpg" alt="">
+													<img src="{{asset('/frontend')}}/images/product/other/img-cart-1.jpg" alt="">
 												</div>
 												<div class="info-product">
 													<div class="name">
@@ -162,7 +166,7 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 											</li>
 											<li>
 												<div class="img-product">
-													<img src="{{asset('public/frontend')}}/images/product/other/img-cart-2.jpg" alt="">
+													<img src="{{asset('/frontend')}}/images/product/other/img-cart-2.jpg" alt="">
 												</div>
 												<div class="info-product">
 													<div class="name">
@@ -204,7 +208,7 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 									<li>
 										<a href="{{url('category/'.$category->id)}}" title="">
 											<span class="menu-img">
-												<img src="{{asset('public/admin/assets/category/'.$category->image)}}" height="20" width="27" alt="">
+												<img src="{{asset('/admin/assets/category/'.$category->image)}}" height="20" width="27" alt="">
 											</span>
 											<span class="menu-title">
 												{{$category->name}}

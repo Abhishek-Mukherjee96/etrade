@@ -56,7 +56,7 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$list->name}}</td>
                                                     <td>
-                                                        <img src="{{asset('public/admin/assets/category/'.$list->image)}}" width="75px">
+                                                        <img src="{{asset('/admin/assets/category/'.$list->image)}}" width="75px">
                                                     </td>
                                                     <td>
                                                         @if($list->status == '1')

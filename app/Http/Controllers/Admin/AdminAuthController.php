@@ -52,7 +52,7 @@ class AdminAuthController extends Controller
         $email = $req->email;
         $password = $req->password;
 
-        if (Auth::attempt(["email" => $email, "password" => $password, "status" => 1])) {
+        if (Auth::attempt(["email" => $email, "u_type" => "admin", "password" => $password, "status" => 1])) {
             return redirect()->route('dashboard');
         } else {
             return Redirect::back()->with(["error" => "Invalid Username & Password."]);

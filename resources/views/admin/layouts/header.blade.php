@@ -21,55 +21,55 @@
     <title>Admin Panel | Pixel Pro Digital</title>
 
     <!--Favicon -->
-    <link rel="icon" href="{{asset('public/admin')}}/assets/images/brand/logo.png" type="image/x-icon" />
+    <link rel="icon" href="{{asset('/admin')}}/assets/images/brand/logo.png" type="image/x-icon" />
 
     <!--Bootstrap css -->
-    <link href="{{asset('public/admin')}}/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('/admin')}}/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Style css -->
-    <link href="{{asset('public/admin')}}/assets/css/style.css" rel="stylesheet" />
-    <link href="{{asset('public/admin')}}/assets/css/dark.css" rel="stylesheet" />
-    <link href="{{asset('public/admin')}}/assets/css/skin-modes.css" rel="stylesheet" />
+    <link href="{{asset('/admin')}}/assets/css/style.css" rel="stylesheet" />
+    <link href="{{asset('/admin')}}/assets/css/dark.css" rel="stylesheet" />
+    <link href="{{asset('/admin')}}/assets/css/skin-modes.css" rel="stylesheet" />
 
     <!-- Animate css -->
-    <link href="{{asset('public/admin')}}/assets/css/animated.css" rel="stylesheet" />
+    <link href="{{asset('/admin')}}/assets/css/animated.css" rel="stylesheet" />
 
     <!--Sidemenu css -->
-    <link href="{{asset('public/admin')}}/assets/css/sidemenu.css" rel="stylesheet">
+    <link href="{{asset('/admin')}}/assets/css/sidemenu.css" rel="stylesheet">
 
     <!-- P-scroll bar css-->
-    <link href="{{asset('public/admin')}}/assets/plugins/p-scrollbar/p-scrollbar.css" rel="stylesheet" />
+    <link href="{{asset('/admin')}}/assets/plugins/p-scrollbar/p-scrollbar.css" rel="stylesheet" />
 
     <!---Icons css-->
-    <link href="{{asset('public/admin')}}/assets/css/icons.css" rel="stylesheet" />
+    <link href="{{asset('/admin')}}/assets/css/icons.css" rel="stylesheet" />
 
     <!-- INTERNAL Prism Css -->
-    <link href="{{asset('public/admin')}}/assets/plugins/prism/prism.css" rel="stylesheet">
+    <link href="{{asset('/admin')}}/assets/plugins/prism/prism.css" rel="stylesheet">
 
     <!-- INTERNAl WYSIWYG Editor css -->
-    <link href="{{asset('public/admin')}}/assets/plugins/wysiwyag/richtext.css" rel="stylesheet" />
+    <link href="{{asset('/admin')}}/assets/plugins/wysiwyag/richtext.css" rel="stylesheet" />
 
     <!-- INTERNAL Select2 css -->
-    <link href="{{asset('public/admin')}}/assets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <link href="{{asset('/admin')}}/assets/plugins/select2/select2.min.css" rel="stylesheet" />
 
     <!-- Data table css -->
-    <link href="{{asset('public/admin')}}/assets/plugins/datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    <link href="{{asset('public/admin')}}/assets/plugins/datatable/css/buttons.bootstrap4.min.css" rel="stylesheet">
-    <link href="{{asset('public/admin')}}/assets/plugins/datatable/responsive.bootstrap4.min.css" rel="stylesheet" />
+    <link href="{{asset('/admin')}}/assets/plugins/datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="{{asset('/admin')}}/assets/plugins/datatable/css/buttons.bootstrap4.min.css" rel="stylesheet">
+    <link href="{{asset('/admin')}}/assets/plugins/datatable/responsive.bootstrap4.min.css" rel="stylesheet" />
 
     <!-- Simplebar css -->
-    <link rel="stylesheet" href="{{asset('public/admin')}}/assets/plugins/simplebar/css/simplebar.css">
+    <link rel="stylesheet" href="{{asset('/admin')}}/assets/plugins/simplebar/css/simplebar.css">
 
     <!-- Color Skin css -->
-    <link id="theme" href="{{asset('public/admin')}}/assets/colors/color1.css" rel="stylesheet" type="text/css" />
+    <link id="theme" href="{{asset('/admin')}}/assets/colors/color1.css" rel="stylesheet" type="text/css" />
 
     <!-- Switcher css -->
-    <link rel="stylesheet" href="{{asset('public/admin')}}/assets/switcher/css/switcher.css">
-    <link rel="stylesheet" href="{{asset('public/admin')}}/assets/switcher/demo.css">
+    <link rel="stylesheet" href="{{asset('/admin')}}/assets/switcher/css/switcher.css">
+    <link rel="stylesheet" href="{{asset('/admin')}}/assets/switcher/demo.css">
 
     <!-- INTERNAL Fullcalendar css-->
-    <link href="{{asset('public/admin')}}/assets/plugins/fullcalendar/fullcalendar.css" rel='stylesheet' />
-    <link href="{{asset('public/admin')}}/assets/plugins/fullcalendar/fullcalendar.print.min.css" rel='stylesheet' media='print' />
+    <link href="{{asset('/admin')}}/assets/plugins/fullcalendar/fullcalendar.css" rel='stylesheet' />
+    <link href="{{asset('/admin')}}/assets/plugins/fullcalendar/fullcalendar.print.min.css" rel='stylesheet' media='print' />
 
 </head>
 

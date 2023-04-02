@@ -16,7 +16,7 @@
 								<div class="price">
 									<span class="sale">$1.589.99</span>
 									<span class="btn-shop">
-										<a href="#" title="">SHOP NOW <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+										<a href="#" title="">SHOP NOW <img src="{{asset('/frontend')}}/images/icons/right-2.png" alt=""></a>
 									</span>
 									<div class="clearfix"></div>
 								</div>
@@ -29,7 +29,7 @@
 							<div class="sale-off">
 								60 % <span>sale</span>
 							</div>
-							<img src="{{asset('public/frontend')}}/images/slider/03.png" alt="">
+							<img src="{{asset('/frontend')}}/images/slider/03.png" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div><!-- /.slider -->
@@ -45,7 +45,7 @@
 								<div class="price">
 									<span class="sale">$1.589.99</span>
 									<span class="btn-shop">
-										<a href="#" title="">SHOP NOW <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+										<a href="#" title="">SHOP NOW <img src="{{asset('/frontend')}}/images/icons/right-2.png" alt=""></a>
 									</span>
 									<div class="clearfix"></div>
 								</div>
@@ -55,7 +55,7 @@
 							</div>
 						</div>
 						<div class="item-image">
-							<img src="{{asset('public/frontend')}}/images/slider/01.png" alt="">
+							<img src="{{asset('/frontend')}}/images/slider/01.png" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div><!-- /.slider -->
@@ -70,7 +70,7 @@
 								<div class="price">
 									<span class="sale">$1.589.99</span>
 									<span class="btn-shop">
-										<a href="#" title="">SHOP NOW <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+										<a href="#" title="">SHOP NOW <img src="{{asset('/frontend')}}/images/icons/right-2.png" alt=""></a>
 									</span>
 									<div class="clearfix"></div>
 								</div>
@@ -83,7 +83,7 @@
 							<div class="sale-off">
 								60 % <span>sale</span>
 							</div>
-							<img src="{{asset('public/frontend')}}/images/slider/03.png" alt="">
+							<img src="{{asset('/frontend')}}/images/slider/03.png" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div><!-- /.slider -->
@@ -99,7 +99,7 @@
 								<div class="price">
 									<span class="sale">$1.589.99</span>
 									<span class="btn-shop">
-										<a href="#" title="">SHOP NOW <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+										<a href="#" title="">SHOP NOW <img src="{{asset('/frontend')}}/images/icons/right-2.png" alt=""></a>
 									</span>
 									<div class="clearfix"></div>
 								</div>
@@ -109,7 +109,7 @@
 							</div>
 						</div>
 						<div class="item-image">
-							<img src="{{asset('public/frontend')}}/images/slider/01.png" alt="">
+							<img src="{{asset('/frontend')}}/images/slider/01.png" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div><!-- /.slider -->
@@ -124,7 +124,7 @@
 								<div class="price">
 									<span class="sale">$1.589.99</span>
 									<span class="btn-shop">
-										<a href="#" title="">SHOP NOW <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+										<a href="#" title="">SHOP NOW <img src="{{asset('/frontend')}}/images/icons/right-2.png" alt=""></a>
 									</span>
 									<div class="clearfix"></div>
 								</div>
@@ -137,7 +137,7 @@
 							<div class="sale-off">
 								60 % <span>sale</span>
 							</div>
-							<img src="{{asset('public/frontend')}}/images/slider/03.png" alt="">
+							<img src="{{asset('/frontend')}}/images/slider/03.png" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div><!-- /.slider -->
@@ -153,7 +153,7 @@
 								<div class="price">
 									<span class="sale">$1.589.99</span>
 									<span class="btn-shop">
-										<a href="#" title="">SHOP NOW <img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></a>
+										<a href="#" title="">SHOP NOW <img src="{{asset('/frontend')}}/images/icons/right-2.png" alt=""></a>
 									</span>
 									<div class="clearfix"></div>
 								</div>
@@ -163,7 +163,7 @@
 							</div>
 						</div>
 						<div class="item-image">
-							<img src="{{asset('public/frontend')}}/images/slider/01.png" alt="">
+							<img src="{{asset('/frontend')}}/images/slider/01.png" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div><!-- /.slider -->
@@ -180,12 +180,12 @@
 				<div class="banner-box one-half">
 					<div class="inner-box">
 						<a href="#" title="">
-							<img src="{{asset('public/frontend')}}/images/banner_boxes/home-01.jpg" alt="">
+							<img src="{{asset('/frontend')}}/images/banner_boxes/home-01.jpg" alt="">
 						</a>
 					</div><!-- /.inner-box -->
 					<div class="inner-box">
 						<a href="#" title="">
-							<img src="{{asset('public/frontend')}}/images/banner_boxes/home-05.jpg" alt="">
+							<img src="{{asset('/frontend')}}/images/banner_boxes/home-05.jpg" alt="">
 						</a>
 					</div><!-- /.inner-box -->
 					<div class="clearfix"></div>
@@ -193,7 +193,7 @@
 				<div class="banner-box">
 					<div class="inner-box">
 						<a href="#" title="">
-							<img src="{{asset('public/frontend')}}/images/banner_boxes/home-04.jpg" alt="">
+							<img src="{{asset('/frontend')}}/images/banner_boxes/home-04.jpg" alt="">
 						</a>
 					</div>
 				</div><!-- /.box -->
@@ -202,7 +202,7 @@
 				<div class="banner-box">
 					<div class="inner-box">
 						<a href="#" title="">
-							<img src="{{asset('public/frontend')}}/images/banner_boxes/home-03.jpg" alt="">
+							<img src="{{asset('/frontend')}}/images/banner_boxes/home-03.jpg" alt="">
 						</a>
 					</div><!-- /.inner-box -->
 				</div><!-- /.box -->
@@ -233,17 +233,17 @@
 							<ul class="box-image owl-carousel-1">
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/01.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/01.jpg" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/01.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/01.jpg" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/01.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/01.jpg" alt="">
 									</a>
 								</li>
 							</ul><!-- /.box-image -->
@@ -262,15 +262,15 @@
 							<div class="box-bottom">
 								<div class="btn-add-cart">
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
+										<img src="{{asset('/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
 									</a>
 								</div>
 								<div class="compare-wishlist">
 									<a href="#" class="compare" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/compare.png" alt="">Compare
+										<img src="{{asset('/frontend')}}/images/icons/compare.png" alt="">Compare
 									</a>
 									<a href="#" class="wishlist" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
+										<img src="{{asset('/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
 									</a>
 								</div>
 							</div><!-- /.box-bottom -->
@@ -288,17 +288,17 @@
 							<ul class="box-image owl-carousel-1">
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/08.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/08.jpg" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/08.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/08.jpg" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/08.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/08.jpg" alt="">
 									</a>
 								</li>
 							</ul><!-- /.box-image -->
@@ -317,15 +317,15 @@
 							<div class="box-bottom">
 								<div class="btn-add-cart">
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
+										<img src="{{asset('/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
 									</a>
 								</div>
 								<div class="compare-wishlist">
 									<a href="#" class="compare" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/compare.png" alt="">Compare
+										<img src="{{asset('/frontend')}}/images/icons/compare.png" alt="">Compare
 									</a>
 									<a href="#" class="wishlist" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
+										<img src="{{asset('/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
 									</a>
 								</div>
 							</div><!-- /.box-bottom -->
@@ -341,17 +341,17 @@
 							<ul class="box-image owl-carousel-1">
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/09.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/09.jpg" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/09.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/09.jpg" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/09.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/09.jpg" alt="">
 									</a>
 								</li>
 							</ul><!-- /.box-image -->
@@ -370,15 +370,15 @@
 							<div class="box-bottom">
 								<div class="btn-add-cart">
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
+										<img src="{{asset('/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
 									</a>
 								</div>
 								<div class="compare-wishlist">
 									<a href="#" class="compare" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/compare.png" alt="">Compare
+										<img src="{{asset('/frontend')}}/images/icons/compare.png" alt="">Compare
 									</a>
 									<a href="#" class="wishlist" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
+										<img src="{{asset('/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
 									</a>
 								</div>
 							</div><!-- /.box-bottom -->
@@ -408,7 +408,7 @@
 						<div class="imagebox style1">
 							<div class="box-image">
 								<a href="{{url('product-details/'.@$product->product_slug)}}" title="">
-									<img src="{{asset('public/admin/assets/product/'.$product->product_img)}}" alt="">
+									<img src="{{asset('/admin/assets/product/'.$product->product_img)}}" alt="">
 								</a>
 							</div><!-- /.box-image -->
 							<div class="box-content">
@@ -426,10 +426,10 @@
 							<div class="box-bottom">
 								<div class="compare-wishlist">
 									<a href="#" class="compare" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/compare.png" alt="">Compare
+										<img src="{{asset('/frontend')}}/images/icons/compare.png" alt="">Compare
 									</a>
 									<a href="#" class="wishlist" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
+										<img src="{{asset('/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
 									</a>
 								</div>
 								<div class="btn-add-cart">
@@ -472,17 +472,17 @@
 							<ul class="box-image owl-carousel-1">
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/01.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/01.jpg" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/01.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/01.jpg" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/01.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/01.jpg" alt="">
 									</a>
 								</li>
 							</ul><!-- /.box-image -->
@@ -501,15 +501,15 @@
 							<div class="box-bottom">
 								<div class="btn-add-cart">
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
+										<img src="{{asset('/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
 									</a>
 								</div>
 								<div class="compare-wishlist">
 									<a href="#" class="compare" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/compare.png" alt="">Compare
+										<img src="{{asset('/frontend')}}/images/icons/compare.png" alt="">Compare
 									</a>
 									<a href="#" class="wishlist" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
+										<img src="{{asset('/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
 									</a>
 								</div>
 							</div><!-- /.box-bottom -->
@@ -525,17 +525,17 @@
 							<ul class="box-image owl-carousel-1">
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/08.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/08.jpg" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/08.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/08.jpg" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/08.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/08.jpg" alt="">
 									</a>
 								</li>
 							</ul><!-- /.box-image -->
@@ -554,15 +554,15 @@
 							<div class="box-bottom">
 								<div class="btn-add-cart">
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
+										<img src="{{asset('/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
 									</a>
 								</div>
 								<div class="compare-wishlist">
 									<a href="#" class="compare" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/compare.png" alt="">Compare
+										<img src="{{asset('/frontend')}}/images/icons/compare.png" alt="">Compare
 									</a>
 									<a href="#" class="wishlist" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
+										<img src="{{asset('/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
 									</a>
 								</div>
 							</div><!-- /.box-bottom -->
@@ -578,17 +578,17 @@
 							<ul class="box-image owl-carousel-1">
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/09.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/09.jpg" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/09.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/09.jpg" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/product/other/09.jpg" alt="">
+										<img src="{{asset('/frontend')}}/images/product/other/09.jpg" alt="">
 									</a>
 								</li>
 							</ul><!-- /.box-image -->
@@ -607,15 +607,15 @@
 							<div class="box-bottom">
 								<div class="btn-add-cart">
 									<a href="#" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
+										<img src="{{asset('/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
 									</a>
 								</div>
 								<div class="compare-wishlist">
 									<a href="#" class="compare" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/compare.png" alt="">Compare
+										<img src="{{asset('/frontend')}}/images/icons/compare.png" alt="">Compare
 									</a>
 									<a href="#" class="wishlist" title="">
-										<img src="{{asset('public/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
+										<img src="{{asset('/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
 									</a>
 								</div>
 							</div><!-- /.box-bottom -->
@@ -642,7 +642,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/09.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/09.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -661,7 +661,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/10.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/10.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -680,7 +680,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/11.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/11.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -699,7 +699,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/12.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/12.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -718,7 +718,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/13.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/13.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -737,7 +737,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/09.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/09.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -756,7 +756,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/10.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/10.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -775,7 +775,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/11.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/11.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -794,7 +794,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/12.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/12.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -813,7 +813,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/13.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/13.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -832,7 +832,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/09.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/09.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -851,7 +851,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/10.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/10.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -870,7 +870,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/11.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/11.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -889,7 +889,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/12.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/12.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -908,7 +908,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/13.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/13.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -927,7 +927,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/09.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/09.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -946,7 +946,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/10.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/10.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -965,7 +965,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/11.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/11.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -984,7 +984,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/12.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/12.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -1003,7 +1003,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/13.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/13.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -1022,7 +1022,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/09.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/09.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -1041,7 +1041,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/10.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/10.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -1060,7 +1060,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/11.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/11.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -1079,7 +1079,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/12.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/12.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -1098,7 +1098,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/13.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/13.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -1117,7 +1117,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/09.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/09.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -1136,7 +1136,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/10.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/10.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -1155,7 +1155,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/11.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/11.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -1174,7 +1174,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/12.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/12.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -1193,7 +1193,7 @@
 					<div class="imagebox style4">
 						<div class="box-image">
 							<a href="#" title="">
-								<img src="{{asset('public/frontend')}}/images/product/other/13.jpg" alt="">
+								<img src="{{asset('/frontend')}}/images/product/other/13.jpg" alt="">
 							</a>
 						</div><!-- /.box-image -->
 						<div class="box-content">
@@ -1222,7 +1222,7 @@
 				<div class="iconbox">
 					<div class="box-header">
 						<div class="image">
-							<img src="{{asset('public/frontend')}}/images/icons/car.png" alt="">
+							<img src="{{asset('/frontend')}}/images/icons/car.png" alt="">
 						</div>
 						<div class="box-title">
 							<h3>Worldwide Shipping</h3>
@@ -1237,7 +1237,7 @@
 				<div class="iconbox">
 					<div class="box-header">
 						<div class="image">
-							<img src="{{asset('public/frontend')}}/images/icons/order.png" alt="">
+							<img src="{{asset('/frontend')}}/images/icons/order.png" alt="">
 						</div>
 						<div class="box-title">
 							<h3>Order Online Service</h3>
@@ -1252,7 +1252,7 @@
 				<div class="iconbox">
 					<div class="box-header">
 						<div class="image">
-							<img src="{{asset('public/frontend')}}/images/icons/payment.png" alt="">
+							<img src="{{asset('/frontend')}}/images/icons/payment.png" alt="">
 						</div>
 						<div class="box-title">
 							<h3>Payment</h3>
@@ -1267,7 +1267,7 @@
 				<div class="iconbox">
 					<div class="box-header">
 						<div class="image">
-							<img src="{{asset('public/frontend')}}/images/icons/return.png" alt="">
+							<img src="{{asset('/frontend')}}/images/icons/return.png" alt="">
 						</div>
 						<div class="box-title">
 							<h3>Return 30 Days</h3>

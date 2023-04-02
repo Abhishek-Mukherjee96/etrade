@@ -5,12 +5,12 @@
                 <div class="widget-ft widget-about">
                     <div class="logo logo-ft">
                         <a href="index.html" title="">
-                            <img src="{{asset('public/frontend')}}/images/logos/logo-ft.png" alt="">
+                            <img src="{{asset('/frontend')}}/images/logos/logo-ft.png" alt="">
                         </a>
                     </div><!-- /.logo-ft -->
                     <div class="widget-content">
                         <div class="icon">
-                            <img src="{{asset('public/frontend')}}/images/icons/call.png" alt="">
+                            <img src="{{asset('/frontend')}}/images/icons/call.png" alt="">
                         </div>
                         <div class="info">
                             <p class="questions">Got Questions ? Call us 24/7!</p>
@@ -139,33 +139,33 @@
                     <form action="#" class="subscribe-form" method="get" accept-charset="utf-8">
                         <div class="subscribe-content">
                             <input type="text" name="email" class="subscribe-email" placeholder="Your E-Mail">
-                            <button type="submit"><img src="{{asset('public/frontend')}}/images/icons/right-2.png" alt=""></button>
+                            <button type="submit"><img src="{{asset('/frontend')}}/images/icons/right-2.png" alt=""></button>
                         </div>
                     </form><!-- /.subscribe-form -->
                     <ul class="pay-list">
                         <li>
                             <a href="#" title="">
-                                <img src="{{asset('public/frontend')}}/images/logos/ft-01.png" alt="">
+                                <img src="{{asset('/frontend')}}/images/logos/ft-01.png" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="#" title="">
-                                <img src="{{asset('public/frontend')}}/images/logos/ft-02.png" alt="">
+                                <img src="{{asset('/frontend')}}/images/logos/ft-02.png" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="#" title="">
-                                <img src="{{asset('public/frontend')}}/images/logos/ft-03.png" alt="">
+                                <img src="{{asset('/frontend')}}/images/logos/ft-03.png" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="#" title="">
-                                <img src="{{asset('public/frontend')}}/images/logos/ft-04.png" alt="">
+                                <img src="{{asset('/frontend')}}/images/logos/ft-04.png" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="#" title="">
-                                <img src="{{asset('public/frontend')}}/images/logos/ft-05.png" alt="">
+                                <img src="{{asset('/frontend')}}/images/logos/ft-05.png" alt="">
                             </a>
                         </li>
                     </ul><!-- /.pay-list -->
@@ -182,7 +182,7 @@
                         <li class="app-store">
                             <a href="#" title="">
                                 <div class="img">
-                                    <img src="{{asset('public/frontend')}}/images/icons/app-store.png" alt="">
+                                    <img src="{{asset('/frontend')}}/images/icons/app-store.png" alt="">
                                 </div>
                                 <div class="text">
                                     <h4>App Store</h4>
@@ -193,7 +193,7 @@
                         <li class="google-play">
                             <a href="#" title="">
                                 <div class="img">
-                                    <img src="images/icons/google-play.png" alt="">
+                                    <img src="{{asset('/frontend')}}/images/icons/google-play.png" alt="">
                                 </div>
                                 <div class="text">
                                     <h4>Google Play</h4>
@@ -215,7 +215,7 @@
                 <p class="copyright"> All Rights Reserved © Techno Store 2017</p>
                 <p class="btn-scroll">
                     <a href="#" title="">
-                        <img src="{{asset('public/frontend')}}/images/icons/top.png" alt="">
+                        <img src="{{asset('/frontend')}}/images/icons/top.png" alt="">
                     </a>
                 </p>
             </div><!-- /.col-md-12 -->
@@ -228,21 +228,21 @@
 <!-- Javascript -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/jquery.min.js"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/tether.min.js"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/bootstrap.min.js"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/waypoints.min.js"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/easing.js"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/jquery.zoom.min.js"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/jquery.flexslider-min.js"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/owl.carousel.js"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/smoothscroll.js"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/jquery.mCustomScrollbar.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/jquery.min.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/tether.min.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/waypoints.min.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/easing.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/jquery.zoom.min.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/owl.carousel.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/smoothscroll.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/jquery.mCustomScrollbar.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtRmXKclfDp20TvfQnpgXSDPjut14x5wk&amp;region=GB"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/gmap3.min.js"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/waves.min.js"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/jquery.countdown.js"></script>
-<script type="text/javascript" src="{{asset('public/frontend')}}/javascript/main.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/gmap3.min.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/waves.min.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/jquery.countdown.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/main.js"></script>
 
 <!-- sweetalert js -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>

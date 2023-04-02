@@ -8,7 +8,18 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\UserAuthController;
 
 //ADMIN ROUTE
+Route::get('/admin/login', [AdminAuthController::class, 'admin_login'])->name('login');
+Route::post('/admin-login-action', [AdminAuthController::class, 'admin_login_action'])->name('admin.login.action');
 Route::group(['middleware' => 'auth'], function () {
+    //PRODUCT ROUTE
+    Route::get('/category-list', [ProductController::class, 'category_list'])->name('category_list');
+    Route::get('/add-category', [ProductController::class, 'add_category'])->name('add_category');
+    Route::post('/add-category-action', [ProductController::class, 'add_category_action'])->name('add_category_action');
+    Route::get('/edit-category/{id}', [ProductController::class, 'edit_category'])->name('edit_category');
+    Route::post('/edit-category-action/{id}', [ProductController::class, 'edit_category_action'])->name('edit_category_action');
+    Route::get('/delete-category-action/{id}', [ProductController::class, 'delete_category_action'])->name('delete_category_action');
+    Route::get('/update-category-status/{id}', [ProductController::class, 'update_category_status'])->name('update_category_status');
+
     Route::get('/dashboard', [AdminAuthController::class, 'dashboard'])->name('dashboard');
     Route::get('/logout', [AdminAuthController::class, 'logout'])->name('logout');
     Route::get('/get-session-data', [AdminAuthController::class, 'get_session_data'])->name('get_session_data');
@@ -18,14 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/update-profile', [ProfileController::class, 'update_profile'])->name('update_profile');
     Route::post('/update-password', [ProfileController::class, 'update_password'])->name('update_password');
 
-    //PRODUCT ROUTE
-    Route::get('/category-list', [ProductController::class, 'category_list'])->name('category_list');
-    Route::get('/add-category', [ProductController::class, 'add_category'])->name('add_category');
-    Route::post('/add-category-action', [ProductController::class, 'add_category_action'])->name('add_category_action');
-    Route::get('/edit-category/{id}', [ProductController::class, 'edit_category'])->name('edit_category');
-    Route::post('/edit-category-action/{id}', [ProductController::class, 'edit_category_action'])->name('edit_category_action');
-    Route::get('/delete-category-action/{id}', [ProductController::class, 'delete_category_action'])->name('delete_category_action');
-    Route::get('/update-category-status/{id}', [ProductController::class, 'update_category_status'])->name('update_category_status');
+
 
     //PRODUCT ROUTE
     Route::get('/product-list', [ProductController::class, 'product_list'])->name('product_list');
@@ -38,16 +42,12 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 //FRONTEND ROUTE
-
+Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::post('/register', [UserAuthController::class, 'register'])->name('user.register');
 Route::post('/login', [UserAuthController::class, 'user_login'])->name('user.login');
 Route::get('/user-logout', [UserAuthController::class, 'user_logout'])->name('user.logout');
-
-Route::group(['middleware' => 'guest'], function () {
-    Route::get('/admin/login', [AdminAuthController::class, 'admin_login'])->name('login');
-    Route::post('/admin-login-action', [AdminAuthController::class, 'admin_login_action'])->name('admin.login.action');
-    Route::get('/', [FrontendController::class, 'index'])->name('index');
-    Route::get('/product-details/{slug}', [FrontendController::class, 'product_details'])->name('product_details');
-    Route::get('/category/{id}', [FrontendController::class, 'product_cat'])->name('product_cat');
-    Route::get('/shop', [FrontendController::class, 'shop'])->name('shop');
-});
+Route::get('/product-details/{slug}', [FrontendController::class, 'product_details'])->name('product_details');
+Route::post('/add-to-cart', [FrontendController::class, 'add_to_cart'])->name('add_to_cart');
+Route::get('/product-update', [FrontendController::class, 'product_update'])->name('product_update');
+Route::get('/category/{id}', [FrontendController::class, 'product_cat'])->name('product_cat');
+Route::get('/shop', [FrontendController::class, 'shop'])->name('shop');

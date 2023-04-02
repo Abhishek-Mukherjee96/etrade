@@ -283,7 +283,7 @@
                                             @foreach(json_decode($product->product_gallery, true) as $list)
 
                                             <a href="{{url('product-details/'.@$product->product_slug)}}" title="">
-                                                <img src="{{asset('public/admin/assets/product/'.$list)}}" height="264" width="210" alt="">
+                                                <img src="{{asset('/admin/assets/product/'.$list)}}" height="264" width="210" alt="">
                                             </a>
                                             @endforeach
                                         </div><!-- /.box-image -->
@@ -295,22 +295,22 @@
                                                 <a href="{{url('product-details/'.@$product->product_slug)}}" title="">{{$product->title}}</a>
                                             </div>
                                             <div class="price">
-                                                <span class="sale">{{$product->selling_price}}</span>
-                                                <span class="regular">{{$product->regular_price}}</span>
+                                                <span class="sale">&#8377; {{$product->selling_price}}</span>
+                                                <span class="regular">&#8377; {{$product->regular_price}}</span>
                                             </div>
                                         </div><!-- /.box-content -->
                                         <div class="box-bottom">
                                             <div class="btn-add-cart">
                                                 <a href="#" title="">
-                                                    <img src="{{asset('public/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
+                                                    <img src="{{asset('/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
                                                 </a>
                                             </div>
                                             <div class="compare-wishlist">
                                                 <a href="#" class="compare" title="">
-                                                    <img src="{{asset('public/frontend')}}/images/icons/compare.png" alt="">Compare
+                                                    <img src="{{asset('/frontend')}}/images/icons/compare.png" alt="">Compare
                                                 </a>
                                                 <a href="#" class="wishlist" title="">
-                                                    <img src="{{asset('public/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
+                                                    <img src="{{asset('/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
                                                 </a>
                                             </div>
                                         </div><!-- /.box-bottom -->
@@ -332,7 +332,7 @@
                         <ul class="flat-pagination style1">
                             <li class="prev">
                                 <a href="#" title="">
-                                    <img src="{{asset('public/frontend')}}/images/icons/left-1.png" alt="">Prev Page
+                                    <img src="{{asset('/frontend')}}/images/icons/left-1.png" alt="">Prev Page
                                 </a>
                             </li>
                             <li>
@@ -349,7 +349,7 @@
                             </li>
                             <li class="next">
                                 <a href="#" title="">
-                                    Next Page<img src="{{asset('public/frontend')}}/images/icons/right-1.png" alt="">
+                                    Next Page<img src="{{asset('/frontend')}}/images/icons/right-1.png" alt="">
                                 </a>
                             </li>
                         </ul><!-- /.flat-pagination style1 -->
@@ -367,31 +367,31 @@
             <div class="col-md-12">
                 <ul class="owl-carousel-9 style1">
                     <li>
-                        <img src="{{asset('public/frontend')}}/images/logos/brand2.png" alt="">
+                        <img src="{{asset('/frontend')}}/images/logos/brand2.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('public/frontend')}}/images/logos/brand5.png" alt="">
+                        <img src="{{asset('/frontend')}}/images/logos/brand5.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('public/frontend')}}/images/logos/brand6.png" alt="">
+                        <img src="{{asset('/frontend')}}/images/logos/brand6.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('public/frontend')}}/images/logos/brand3.png" alt="">
+                        <img src="{{asset('/frontend')}}/images/logos/brand3.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('public/frontend')}}/images/logos/brand4.png" alt="">
+                        <img src="{{asset('/frontend')}}/images/logos/brand4.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('public/frontend')}}/images/logos/brand7.png" alt="">
+                        <img src="{{asset('/frontend')}}/images/logos/brand7.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('public/frontend')}}/images/logos/brand2.png" alt="">
+                        <img src="{{asset('/frontend')}}/images/logos/brand2.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('public/frontend')}}/images/logos/brand6.png" alt="">
+                        <img src="{{asset('/frontend')}}/images/logos/brand6.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('public/frontend')}}/images/logos/brand3.png" alt="">
+                        <img src="{{asset('/frontend')}}/images/logos/brand3.png" alt="">
                     </li>
                     <li>
                         <img src="images/logos/brand4.png" alt="">

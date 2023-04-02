@@ -10,9 +10,9 @@ $profile_details = User::where('id', Auth::user()->id)->select('users.*')->first
     <div class="container-fluid">
         <div class="d-flex">
             <a class="header-brand" href="index.html">
-                <img src="{{asset('public/admin')}}/assets/images/brand/logo.png" class="header-brand-img desktop-lgo" alt="Admintro logo">
-                <img src="{{asset('public/admin')}}/assets/images/brand/logo.png" class="header-brand-img dark-logo" alt="Admintro logo">
-                <img src="{{asset('public/admin')}}/assets/images/brand/logo.png" class="header-brand-img darkmobile-logo" alt="Admintro logo">
+                <img src="{{asset('/admin')}}/assets/images/brand/logo.png" class="header-brand-img desktop-lgo" alt="Admintro logo">
+                <img src="{{asset('/admin')}}/assets/images/brand/logo.png" class="header-brand-img dark-logo" alt="Admintro logo">
+                <img src="{{asset('/admin')}}/assets/images/brand/logo.png" class="header-brand-img darkmobile-logo" alt="Admintro logo">
             </a>
             <div class="app-sidebar__toggle" data-toggle="sidebar">
                 <a class="open-toggle" href="index-2.html#">
@@ -43,9 +43,9 @@ $profile_details = User::where('id', Auth::user()->id)->select('users.*')->first
                     <a href="index-2.html#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
                         <span>
                             @if(@$profile_details->image)
-                            <img src="{{asset('public/admin/assets/images/user-profile/'.@$profile_details->image)}}" alt="img" class="avatar-md brround">
+                            <img src="{{asset('/admin/assets/images/user-profile/'.@$profile_details->image)}}" alt="img" class="avatar-md brround">
                             @else
-                            <img alt="User Avatar" class="rounded-circle" src="{{asset('public/admin/assets/images/user-profile/avatar.png')}}">
+                            <img alt="User Avatar" class="rounded-circle" src="{{asset('/admin/assets/images/user-profile/avatar.png')}}">
                             @endif
                         </span>
                     </a>

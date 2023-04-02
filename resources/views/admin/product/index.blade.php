@@ -58,7 +58,7 @@
                                                     <td>{{$list->id}}</td>
                                                     <td>{{$list->title}}</td>
                                                     <td>
-                                                        <img src="{{asset('public/admin/assets/product/'.$list->product_img)}}" width="75px">
+                                                        <img src="{{asset('/admin/assets/product/'.$list->product_img)}}" width="75px">
                                                     </td>
                                                     <td>{{$list->product_slug}}</td>
                                                     @php

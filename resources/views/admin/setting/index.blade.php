@@ -50,7 +50,7 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>
-                                                        <img src="{{asset('public/admin/assets/logo/'.$list->logo)}}" width="75px">
+                                                        <img src="{{asset('/admin/assets/logo/'.$list->logo)}}" width="75px">
                                                     </td>
                                                     <td>{{$list->email}}</td>
                                                     <td>{{$list->phone}}</td>

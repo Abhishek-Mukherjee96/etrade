@@ -38,7 +38,7 @@
                                     <div class="col-md-4 mb-3">
                                         <label><strong>Logo:</strong></label>
                                         <input class="form-control mb-4" type="file" name="logo">
-                                        <img src="{{asset('public/admin/assets/logo/'.$setting->logo)}}" width="75px">
+                                        <img src="{{asset('/admin/assets/logo/'.$setting->logo)}}" width="75px">
                                         @error('logo')
                                         <span class="text text-danger">{{$message}}</span>
                                         @enderror
