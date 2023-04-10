@@ -243,6 +243,7 @@
 <script type="text/javascript" src="{{asset('/frontend')}}/javascript/waves.min.js"></script>
 <script type="text/javascript" src="{{asset('/frontend')}}/javascript/jquery.countdown.js"></script>
 <script type="text/javascript" src="{{asset('/frontend')}}/javascript/main.js"></script>
+<script type="text/javascript" src="{{asset('/frontend')}}/javascript/custom.js"></script>
 
 <!-- sweetalert js -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>

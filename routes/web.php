@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\UserAuthController;
 
@@ -47,7 +48,11 @@ Route::post('/register', [UserAuthController::class, 'register'])->name('user.re
 Route::post('/login', [UserAuthController::class, 'user_login'])->name('user.login');
 Route::get('/user-logout', [UserAuthController::class, 'user_logout'])->name('user.logout');
 Route::get('/product-details/{slug}', [FrontendController::class, 'product_details'])->name('product_details');
-Route::post('/add-to-cart', [FrontendController::class, 'add_to_cart'])->name('add_to_cart');
+Route::post('/add-to-cart', [CartController::class, 'add_to_cart'])->name('add_to_cart');
+Route::get('/load-cart-data', [CartController::class, 'cart_count'])->name('cart_count');
+Route::get('/cart', [CartController::class, 'view_cart'])->name('view_cart');
+Route::post('/delete-cart-item', [CartController::class, 'delete_cart_item'])->name('delete_cart_item');
+Route::post('/update-cart', [CartController::class, 'update_cart'])->name('update_cart');
 Route::get('/product-update', [FrontendController::class, 'product_update'])->name('product_update');
 Route::get('/category/{id}', [FrontendController::class, 'product_cat'])->name('product_cat');
 Route::get('/shop', [FrontendController::class, 'shop'])->name('shop');

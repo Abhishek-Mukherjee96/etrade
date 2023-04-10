@@ -1,5 +1,6 @@
 @php
 $categorys = DB::table('product_categories')->where('status',1)->get();
+$cart_items = DB::table('carts')->leftjoin('products', 'products.id', '=', 'carts.product_id')->where('user_id', Auth::user()->id)->get();
 @endphp
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 	<link rel="shortcut icon" href="{{asset('/frontend')}}/favicon/favicon.png">
 
 	<!-- sweetalert js -->
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 
 </head>
 
@@ -83,7 +84,7 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 											<a href="wishlist.html" title="">Wishlist</a>
 										</li>
 										<li>
-											<a href="shop-cart.html" title="">My Cart</a>
+											<a href="{{route('view_cart')}}" title="">My Cart</a>
 										</li>
 										<li>
 											<a href="my-account.html" title="">My Account</a>
@@ -137,56 +138,47 @@ $categorys = DB::table('product_categories')->where('status',1)->get();
 									</ul><!-- /.menu-compare-wishlist -->
 								</div><!-- /.inner-box -->
 								<div class="inner-box">
-									<a href="#" title="">
+									<a href="{{route('view_cart')}}" title="">
 										<div class="icon-cart">
 											<img src="{{asset('/frontend')}}/images/icons/cart.png" alt="">
-											<span>4</span>
-										</div>
-										<div class="price">
-											$0.00
+											<span class="cart-count">0</span>
 										</div>
 									</a>
-									<div class="dropdown-box">
+									<div class="dropdown-box ">
 										<ul>
+											@php
+											$total = 0;
+											@endphp
+											@if(isset($cart_items))
+											@foreach($cart_items as $item)
 											<li>
 												<div class="img-product">
-													<img src="{{asset('/frontend')}}/images/product/other/img-cart-1.jpg" alt="">
+													<img src="{{asset('admin/assets/product/'.$item->product_img)}}" alt="">
 												</div>
 												<div class="info-product">
 													<div class="name">
-														Samsung - Galaxy S6 4G LTE <br />with 32GB Memory Cell Phone
+													{{$item->title}}
 													</div>
 													<div class="price">
-														<span>1 x</span>
-														<span>$250.00</span>
+														<span>{{$item->qty}} x</span>
+														<span>{{$item->selling_price}}</span>
 													</div>
 												</div>
 												<div class="clearfix"></div>
-												<span class="delete">x</span>
+												<span class="delete delete-cart-item">x</span>
 											</li>
-											<li>
-												<div class="img-product">
-													<img src="{{asset('/frontend')}}/images/product/other/img-cart-2.jpg" alt="">
-												</div>
-												<div class="info-product">
-													<div class="name">
-														Sennheiser - Over-the-Ear Headphone System - Black
-													</div>
-													<div class="price">
-														<span>1 x</span>
-														<span>$250.00</span>
-													</div>
-												</div>
-												<div class="clearfix"></div>
-												<span class="delete">x</span>
-											</li>
+											@php
+											$total += $item->selling_price * $item->qty;
+											@endphp
+											@endforeach
+											@endif
 										</ul>
 										<div class="total">
-											<span>Subtotal:</span>
-											<span class="price">$1,999.00</span>
+											<span>Total:</span>
+											<span class="price">&#8377; {{$total}}</span>
 										</div>
 										<div class="btn-cart">
-											<a href="shop-cart.html" class="view-cart" title="">View Cart</a>
+											<a href="{{route('view_cart')}}" class="view-cart" title="">View Cart</a>
 											<a href="shop-checkout.html" class="check-out" title="">Checkout</a>
 										</div>
 									</div>

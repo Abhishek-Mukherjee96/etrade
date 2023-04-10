@@ -88,24 +88,19 @@
 									<option value="">White</option>
 								</select>
 							</div>
-							<!-- <div class="quanlity">
-								<button class="btn-up" onclick="btnup()">+</button>
-								<input type="number" name="number" value="" min="1" max="100" placeholder="Quanlity">
-								<button class="btn-down" onclick="btndown()">-</button>
-							</div> -->
-							<div class="col-md-3 quanlity">
-								<div class="input-group text-center mb-3" style="width:200px;">
-									<button class="input-group-text decrement-btn" style="border-radius: inherit; font-size:20px; background-color: #ff0000;">-</button>
-									<input type="hidden" value="{{$product->id}}" class="prod_id">
-									<input type="text" name="quantity" class="form-control qty-input text-center" value="1">
-									<button class="input-group-text increment-btn" style="border-radius: inherit; font-size:20px; background-color: #ff0000;">+</button>
-								</div>
+							<div class="quanlity">
+								<span class="btn-down decrement-btn" onclick="btndown()"></span>
+								<input type="hidden" value="{{$product->id}}" class="prod_id">
+								<input type="text" id="qty" class="qty-input" name="quantity" value="1" placeholder="Quanlity">
+								<span class="btn-up increment-btn" onclick="btnup()"></span>
 							</div>
 						</div>
 						<div class="box-cart style2">
+							@if(Auth::check())
 							<div class="btn-add-cart">
 								<a href="#" class="add_to_cart" title=""><img src="{{asset('/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart</a>
 							</div>
+							@endif
 							<div class="compare-wishlist">
 								<a href="compare.html" class="compare" title=""><img src="{{asset('/frontend')}}/images/icons/compare.png" alt="">Compare</a>
 								<a href="compare.html" class="wishlist" title=""><img src="{{asset('/frontend')}}/images/icons/wishlist.png" alt="">Wishlist</a>
@@ -403,89 +398,53 @@
 	</div><!-- /.container -->
 </section><!-- /.flat-imagebox style4 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+@if(Auth::check())
 <script>
 	function btnup() {
-		console.log("{{ url('product-update') }}?user_id={{ auth()->user()->id }}&product_id={{ $product->id }}&op=plus")
-		return;
+
 		fetch("{{ url('product-update') }}?user_id={{ auth()->user()->id }}&product_id={{ $product->id }}&op=plus")
-			.then(response => response.json())
-			.then(data => console.log(data))
+			.then(response => {
+				if (response.status == 200) {
+
+				} else if (response.status == 400) {
+					// alert("Wrong")
+				} else {
+					// alert("Something Went Wrong")
+				}
+				return response.json()
+			})
+			.then(data => {
+				console.log(data.qty)
+				$("#qty").val(data.qty)
+			})
+			.catch(err => {
+				console.log(err)
+				// alert("Something Went Wrong")
+			})
 	}
 
 	function btndown() {
+		fetch("{{ url('product-update') }}?user_id={{ auth()->user()->id }}&product_id={{ $product->id }}&op=minus")
+			.then(response => {
+				if (response.status == 200) {
 
+				} else if (response.status == 400) {
+					// alert("Wrong")
+				} else {
+					// alert("Something Went Wrong")
+				}
+				return response.json()
+			})
+			.then(data => {
+				console.log(data.qty)
+				$("#qty").val(data.qty)
+			})
+			.catch(err => {
+				console.log(err)
+				// alert("Something Went Wrong")
+			})
 	}
 </script>
-<script>
-	$(document).ready(function() {
+@endif
 
-		//ADD TO CART FUNCTIONALITY
-		$('.add_to_cart').click(function(e) {
-			e.preventDefault();
-			var product_id = $(this).closest('.product_data').find('.prod_id').val();
-			var product_qty = $(this).closest('.product_data').find('.qty-input').val();
-			$.ajaxSetup({
-				headers: {
-					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-				}
-			});
-			$.ajax({
-				method: "POST",
-				url: "/add-to-cart",
-				data: {
-					'product_id': product_id,
-					'product_qty': product_qty,
-				},
-				success: function(response) {
-					if (response.success) {
-						Swal.fire({
-							icon: 'success',
-							title: 'Thank You!',
-							text: response.success,
-							showConfirmButton: false,
-							timer: 3000
-						});
-					} else {
-						Swal.fire({
-							icon: 'error',
-							title: 'Oops!',
-							text: response.error,
-							showConfirmButton: false,
-							timer: 3000
-						});
-					}
-				}
-			});
-		});
-
-		//QTY INCREMENT
-		$('.increment-btn').click(function(e) {
-			e.preventDefault();
-			//alert("ok");
-			var inc_value = $('.qty-input').val();
-			var value = parseInt(inc_value, 10);
-			value = isNaN(value) ? 0 : value;
-
-			if (value < 10) {
-				value++;
-				$('.qty-input').val(value);
-			}
-		});
-
-		//QTY DECREMENT
-		$('.decrement-btn').click(function(e) {
-			e.preventDefault();
-			//alert("ok");
-			var dec_value = $('.qty-input').val();
-			var value = parseInt(dec_value, 10);
-			value = isNaN(value) ? 0 : value;
-
-			if (value > 1) {
-				value--;
-				$('.qty-input').val(value);
-			}
-		});
-
-	});
-</script>
 @include('frontend.include.footer')

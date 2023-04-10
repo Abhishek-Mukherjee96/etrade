@@ -277,7 +277,7 @@
                             @foreach($products as $product)
                             <div class="col-md-4 col-sm-6">
                                 <div class="product-box">
-                                    <div class="imagebox style8">
+                                    <div class="imagebox style8 product_data">
                                         <span class="item-new">NEW</span>
                                         <div class="box-image owl-carousel-1">
                                             @foreach(json_decode($product->product_gallery, true) as $list)
@@ -300,7 +300,7 @@
                                         </div><!-- /.box-content -->
                                         <div class="box-bottom">
                                             <div class="btn-add-cart">
-                                                <a href="#" title="">
+                                                <a href="#" title="" class="add_to_cart">
                                                     <img src="{{asset('/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
                                                 </a>
                                             </div>

@@ -41,32 +41,52 @@ class FrontendController extends Controller
         return view('frontend.shop',compact('products'));
     }
 
-    //ADD TO CART 
-    public function add_to_cart(Request $req){
-        $product_id = $req->input('product_id');
-        $product_qty = $req->input('product_qty');
-
-        $prod_check = Product::where('id',$product_id)->first();
-        if($prod_check){
-            if(Cart::where('product_id',$product_id)->where('user_id',Auth::user()->id)->exists()){
-                return response()->json(['error' => $prod_check->title.' Already Added to Cart.']);
-            }else{
-                $cart = new Cart();
-                $cart->user_id = Auth::user()->id;
-                $cart->product_id = $product_id;
-                $cart->qty = $product_qty;
-                $cart->save();
-                return response()->json(['success' => $prod_check->title.' Added to Cart Successfully.']);
-            }
-        }
-    }
-
     //PRODUCT UPDATE
     public function product_update(Request $request){
         $user_id = auth()->user()->id;
         $product_id = $request->query("product_id");
         $op = $request->query("op");
 
+        $record = Cart::where(['user_id' => Auth::user()->id, 'product_id' => $product_id])->first();
+
+        if($record) {
+            if($record->qty <= 1 && $op == "minus") {
+                return response(["qty" => $record->qty ],400);
+            }
+            else {
+                if($op == "plus") {
+                    $record->qty++;
+                }
+                else {
+                    $record->qty--;
+                }
+                $record->save();
+                return response(["qty" => $record->qty ], 200);
+            }
+        }
+        else {
+            return response(["qty" => $record->qty ], 400);
+        }
+
+        if($record) {
+            if($record->qty >= 1 && $op == "plus") {
+                return response(["qty" => $record->qty ],400);
+            }
+            else {
+                if($op == "minus") {
+                    $record->qty--;
+                }
+                else {
+                    $record->qty++;
+                }
+                $record->save();
+                return response(["qty" => $record->qty ], 200);
+            }
+        }
+        else {
+            return response(["qty" => $record->qty ], 400);
+        }
+        
         
     }
 }
