@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\UserAuthController;
 
@@ -53,6 +54,8 @@ Route::get('/load-cart-data', [CartController::class, 'cart_count'])->name('cart
 Route::get('/cart', [CartController::class, 'view_cart'])->name('view_cart');
 Route::post('/delete-cart-item', [CartController::class, 'delete_cart_item'])->name('delete_cart_item');
 Route::post('/update-cart', [CartController::class, 'update_cart'])->name('update_cart');
+Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+Route::post('/place-order', [CheckoutController::class, 'place_order'])->name('place_order');
 Route::get('/product-update', [FrontendController::class, 'product_update'])->name('product_update');
 Route::get('/category/{id}', [FrontendController::class, 'product_cat'])->name('product_cat');
 Route::get('/shop', [FrontendController::class, 'shop'])->name('shop');

@@ -88,7 +88,7 @@
                         </table>
                         <div class="btn-cart-totals">
                             <a href="#" class="update" title="">Update Cart</a>
-                            <a href="#" class="checkout" title="">Proceed to Checkout</a>
+                            <a href="{{route('checkout')}}" class="checkout" title="">Proceed to Checkout</a>
                         </div><!-- /.btn-cart-totals -->
                     </form><!-- /form -->
                 </div><!-- /.cart-totals -->

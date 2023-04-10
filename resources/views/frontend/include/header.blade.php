@@ -1,7 +1,11 @@
 @php
 $categorys = DB::table('product_categories')->where('status',1)->get();
+@endphp
+@if(auth()->check())
+@php
 $cart_items = DB::table('carts')->leftjoin('products', 'products.id', '=', 'carts.product_id')->where('user_id', Auth::user()->id)->get();
 @endphp
+@endif
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
@@ -90,7 +94,7 @@ $cart_items = DB::table('carts')->leftjoin('products', 'products.id', '=', 'cart
 											<a href="my-account.html" title="">My Account</a>
 										</li>
 										<li>
-											<a href="shop-checkout.html" title="">Checkout</a>
+											<a href="{{route('checkout')}}" title="">Checkout</a>
 										</li>
 									</ul><!-- /.unstyled -->
 								</li>
@@ -157,7 +161,7 @@ $cart_items = DB::table('carts')->leftjoin('products', 'products.id', '=', 'cart
 												</div>
 												<div class="info-product">
 													<div class="name">
-													{{$item->title}}
+														{{$item->title}}
 													</div>
 													<div class="price">
 														<span>{{$item->qty}} x</span>

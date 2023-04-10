@@ -40,9 +40,11 @@ class CartController extends Controller
     //DISPLAY CART ITEM IN CART PAGE
     public function view_cart()
     {
-        $cart_items = Cart::leftjoin('products', 'products.id', '=', 'carts.product_id')->where('user_id', Auth::user()->id)->get();
+        if(Auth::check()){
+            $cart_items = Cart::leftjoin('products', 'products.id', '=', 'carts.product_id')->where('user_id', Auth::user()->id)->get();
+            return view('frontend.cart', compact('cart_items'));
+        }
         //dd($cart_items);
-        return view('frontend.cart', compact('cart_items'));
     }
 
     //DELETE CART ITEMS
