@@ -16,8 +16,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @php 
-                            $total = 0;
+                        @php
+                        $total = 0;
                         @endphp
                         @if(count($cart_items) > 0)
                         @foreach($cart_items as $item)
@@ -26,12 +26,21 @@
                             <td><img src="{{asset('admin/assets/product/'.$item->product_img)}}" alt="Image" width="75px"></td>
                             <td>{{$item->title}}</td>
                             <td>
+                                @if($item->prod_qty > $item->qty)
                                 <div class="quanlity">
                                     <span class="decrement-btn change_quantity"><i class="fa fa-minus"></i></span>
                                     <input type="hidden" value="{{$item->id}}" class="prod_id">
                                     <input type="text" id="qty" class="qty-input" name="quantity" value="{{$item->qty}}" placeholder="Quanlity">
                                     <span class="increment-btn change_quantity"><i class="fa fa-plus"></i></span>
                                 </div>
+                                @php
+                                $total += $item->selling_price * $item->qty;
+                                @endphp
+                                @else
+                                <div class="status-product">
+                                    <span class="badge badge-danger">Out of stock</span>
+                                </div>
+                                @endif
                             </td>
                             <td>&#8377; {{$item->selling_price}}</td>
                             <td>
@@ -40,16 +49,13 @@
                                 </a>
                             </td>
                         </tr>
-                        @php 
-                            $total += $item->selling_price * $item->qty;
-                        @endphp
                         @endforeach
                         @else
                         <tr>
                             <td colspan="6" style="text-align: center;">Your Cart is Empty.</td>
                         </tr>
                         @endif
-                        
+
                     </tbody>
                 </table>
             </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,16 @@ class CheckoutController extends Controller
     //CHECKOUT PAGE
     public function checkout()
     {
+        $old_cart_items = Cart::leftjoin('products', 'products.id', '=', 'carts.product_id')->where('user_id', Auth::user()->id)->get();
+        //dd($cart_items);
+        foreach($old_cart_items as $item){
+            if(!Product::where('id',$item->product_id)->where('prod_qty','>=',$item->qty)->exists()){
+                $remove_item = Cart::where('user_id',Auth::user()->id)->where('product_id',$item->product_id)->first();
+                $remove_item->delete();
+            }
+        }
         $cart_items = Cart::leftjoin('products', 'products.id', '=', 'carts.product_id')->where('user_id', Auth::user()->id)->get();
+
         return view('frontend.checkout', compact('cart_items'));
     }
 

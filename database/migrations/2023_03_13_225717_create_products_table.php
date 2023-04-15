@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('product_slug');
             $table->string('product_img');
             $table->string('product_gallery');
+            $table->unsignedBigInteger('prod_qty');
             $table->string('status');
             $table->timestamps();
         });

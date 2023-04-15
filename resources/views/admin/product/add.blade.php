@@ -72,17 +72,24 @@
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-4 mb-3">
                                             <label><strong>Image:</strong></label>
                                             <input class="form-control mb-4" type="file" name="product_img">
                                             @error('product_img')
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-4 mb-3">
                                             <label><strong>Image Gallery:</strong></label>
                                             <input class="form-control mb-4" type="file" name="product_gallery[]" multiple>
                                             @error('product_gallery')
+                                            <span class="text text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label><strong>Quantity:</strong></label>
+                                            <input class="form-control mb-4" type="text" placeholder="Quantity" name="prod_qty">
+                                            @error('prod_qty')
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>

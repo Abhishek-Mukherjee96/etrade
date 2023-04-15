@@ -57,9 +57,15 @@
 									<span>3 Reviews</span>
 								</div>
 							</div>
+							@if($product->qty > 0)
 							<div class="status-product">
 								Availablity <span>In stock</span>
 							</div>
+							@else
+							<div class="status-product">
+								Availablity <span>Out of stock</span>
+							</div>
+							@endif
 						</div>
 					</div><!-- /.header-detail -->
 					<div class="content-detail">
@@ -96,7 +102,7 @@
 							</div>
 						</div>
 						<div class="box-cart style2">
-							@if(Auth::check())
+							@if($product->qty > 0)
 							<div class="btn-add-cart">
 								<a href="#" class="add_to_cart" title=""><img src="{{asset('/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart</a>
 							</div>

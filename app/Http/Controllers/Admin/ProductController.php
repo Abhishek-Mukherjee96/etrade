@@ -140,6 +140,7 @@ class ProductController extends Controller
             'short_desc' => 'required',
             'description' => 'required',
             'product_img' => 'required',
+            'qty' => 'required|numeric',
         ]);
 
         $add_product = new Product();
@@ -168,6 +169,7 @@ class ProductController extends Controller
         $add_product->short_desc = $req->short_desc;
         $add_product->description = $req->description;
         $add_product->product_gallery = $logo;
+        $add_product->qty = $req->qty;
         $add_product->status = 1;
 
         if ($add_product->save()) {
@@ -212,6 +214,7 @@ class ProductController extends Controller
         $update_product->short_desc = $req->short_desc;
         $update_product->description = $req->description;
         $update_product->product_gallery = $logo;
+        $update_product->qty = $req->qty;
         $update_product->status = 1;
 
         if ($update_product->save()) {
