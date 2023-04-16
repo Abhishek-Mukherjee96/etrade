@@ -53,13 +53,14 @@
                         @else
                         <tr>
                             <td colspan="6" style="text-align: center;">Your Cart is Empty.</td>
+                            <a href="{{route('shop')}}">Continue Shopping.</a>
                         </tr>
                         @endif
 
                     </tbody>
                 </table>
             </div>
-
+            @if(count($cart_items) > 0)
             <div class="col-lg-4">
                 <div class="cart-totals">
                     <h3>Cart Totals</h3>
@@ -99,6 +100,7 @@
                     </form><!-- /form -->
                 </div><!-- /.cart-totals -->
             </div><!-- /.col-lg-4 -->
+            @endif
         </div><!-- /.row -->
     </div><!-- /.container -->
 </section><!-- /.flat-shop-cart -->

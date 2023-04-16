@@ -96,7 +96,6 @@
                             $total += $item->selling_price * $item->qty;
                             @endphp
                             @endforeach
-                            @endif
                         </tbody>
                     </table><!-- /.product -->
                     <hr>
@@ -106,9 +105,15 @@
                                 <td>Total</td>
                                 <td class="price-total">{{$total}}</td>
                             </tr>
+                            @else
+                            <tr>
+                                <td colspan="2">No products in cart</td>
+                            </tr>
+                            @endif
+
                         </tbody>
                     </table>
-
+                    @if(count($cart_items) > 0)
                     <div class="checkbox">
                         <input type="checkbox" id="checked-order" name="checked-order" checked>
                         <label for="checked-order">I’ve read and accept the terms & conditions *</label>
@@ -116,6 +121,7 @@
                     <div class="btn-order">
                         <button type="submit" class="order">Place Order</a>
                     </div><!-- /.btn-order -->
+                    @endif
                     </form>
                 </div><!-- /.cart-totals style2 -->
             </div><!-- /.col-md-5 -->

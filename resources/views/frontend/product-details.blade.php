@@ -57,7 +57,7 @@
 									<span>3 Reviews</span>
 								</div>
 							</div>
-							@if($product->qty > 0)
+							@if($product->prod_qty > 0)
 							<div class="status-product">
 								Availablity <span>In stock</span>
 							</div>
@@ -102,7 +102,7 @@
 							</div>
 						</div>
 						<div class="box-cart style2">
-							@if($product->qty > 0)
+							@if($product->prod_qty > 0)
 							<div class="btn-add-cart">
 								<a href="#" class="add_to_cart" title=""><img src="{{asset('/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart</a>
 							</div>

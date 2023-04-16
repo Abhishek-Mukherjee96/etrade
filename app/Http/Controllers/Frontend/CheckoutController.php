@@ -44,6 +44,14 @@ class CheckoutController extends Controller
         $order->country = $req->country;
         $order->pincode = $req->pincode;
         $order->tracking_no = 'ts' .'-'. rand(1111, 9999);
+
+        //Calculate the total price
+        $total = 0;
+        $cartitems_total = Cart::leftjoin('products', 'products.id', '=', 'carts.product_id')->where('user_id',Auth::user()->id)->get();
+        foreach($cartitems_total as $prod){
+            $total += $prod->selling_price * $prod->qty;
+        }
+        $order->total_price = $total;
         $order->save();
 
         $cart_items = Cart::leftjoin('products', 'products.id', '=', 'carts.product_id')->where('user_id', Auth::user()->id)->get();
