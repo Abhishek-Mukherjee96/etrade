@@ -26,7 +26,7 @@
                             <td><img src="{{asset('admin/assets/product/'.$item->product_img)}}" alt="Image" width="75px"></td>
                             <td>{{$item->title}}</td>
                             <td>
-                                @if($item->prod_qty > $item->qty)
+                                @if($item->prod_qty >= $item->qty)
                                 <div class="quanlity">
                                     <span class="decrement-btn change_quantity"><i class="fa fa-minus"></i></span>
                                     <input type="hidden" value="{{$item->id}}" class="prod_id">
@@ -66,10 +66,10 @@
                     <form action="#" method="get" accept-charset="utf-8">
                         <table id="example1">
                             <tbody>
-                                <tr>
+                                <!-- <tr>
                                     <td>Subtotal</td>
                                     <td class="subtotal">$2,589.00</td>
-                                </tr>
+                                </tr> -->
                                 <!-- <tr>
                                     <td>Shipping</td>
                                     <td class="btn-radio">

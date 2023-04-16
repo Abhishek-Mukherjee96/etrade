@@ -55,6 +55,10 @@ class CheckoutController extends Controller
                 'qty' => $item->qty,
                 'price' => $item->selling_price,
             ]);
+
+            $prod = Product::where('id',$item->product_id)->first();
+            $prod->prod_qty = $prod->prod_qty - $item->qty;
+            $prod->update();
         }
 
         if (Auth::user()->addr_one == NULL) {
@@ -69,7 +73,9 @@ class CheckoutController extends Controller
             $user->pincode = $req->pincode;
             $user->update();
         }
+        $cart_items = Cart::where('user_id', Auth::user()->id)->get();
+        Cart::destroy($cart_items);
         $req->session()->flash('success','Order Placed Successfully.');
-        return redirect()->back();
+        return redirect()->route('index');
     }
 }
