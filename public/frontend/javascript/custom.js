@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     //LOAD CART COUNT
     loadcart();
@@ -6,7 +6,7 @@ $(document).ready(function() {
         $.ajax({
             method: 'GET',
             url: '/load-cart-data',
-            success: function(response) {
+            success: function (response) {
                 $('.cart-count').html('');
                 $('.cart-count').html(response.count);
                 // alert(response.count);
@@ -15,7 +15,7 @@ $(document).ready(function() {
     }
 
     //ADD TO CART FUNCTIONALITY
-    $('.add_to_cart').click(function(e) {
+    $('.add_to_cart').click(function (e) {
         e.preventDefault();
         var product_id = $(this).closest('.product_data').find('.prod_id').val();
         var product_qty = $(this).closest('.product_data').find('.qty-input').val();
@@ -31,23 +31,27 @@ $(document).ready(function() {
                 'product_id': product_id,
                 'product_qty': product_qty,
             },
-            success: function(response) {
+            success: function (response) {
                 if (response.success) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Thank You!',
-                        text: response.success,
-                        showConfirmButton: false,
-                        timer: 3000
-                    });
+                    // Swal.fire({
+                    //     icon: 'success',
+                    //     title: 'Thank You!',
+                    //     text: response.success,
+                    //     showConfirmButton: false,
+                    //     timer: 3000
+                    // });
+                    toastr.success(response.success);
+
                 } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops!',
-                        text: response.error,
-                        showConfirmButton: false,
-                        timer: 3000
-                    });
+                    // Swal.fire({
+                    //     icon: 'error',
+                    //     title: 'Oops!',
+                    //     text: response.error,
+                    //     showConfirmButton: false,
+                    //     timer: 3000
+                    // });
+                    toastr.error(response.error);
+
                 }
                 loadcart();
             }
@@ -55,7 +59,7 @@ $(document).ready(function() {
     });
 
     //QTY INCREMENT
-    $('.increment-btn').click(function(e) {
+    $('.increment-btn').click(function (e) {
         e.preventDefault();
         var inc_value = $(this).closest('.product_data').find('.qty-input').val();
         var value = parseInt(inc_value, 10);
@@ -68,7 +72,7 @@ $(document).ready(function() {
     });
 
     //QTY DECREMENT
-    $('.decrement-btn').click(function(e) {
+    $('.decrement-btn').click(function (e) {
         e.preventDefault();
         var dec_value = $(this).closest('.product_data').find('.qty-input').val();
         var value = parseInt(dec_value, 10);
@@ -81,7 +85,7 @@ $(document).ready(function() {
     });
 
     //DELETE CART ITEM
-    $('.delete-cart-item').click(function(e){
+    $('.delete-cart-item').click(function (e) {
         e.preventDefault();
         var prod_id = $(this).closest('.product_data').find('.prod_id').val();
         $.ajaxSetup({
@@ -90,28 +94,32 @@ $(document).ready(function() {
             }
         });
         $.ajax({
-            method:"POST",
-            url:"delete-cart-item",
-            data:{
-                'prod_id':prod_id
+            method: "POST",
+            url: "delete-cart-item",
+            data: {
+                'prod_id': prod_id
             },
-            success:function(response){
+            success: function (response) {
                 if (response.success) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Thank You!',
-                        text: response.success,
-                        showConfirmButton: false,
-                        timer: 3000
-                    });
+                    // Swal.fire({
+                    //     icon: 'success',
+                    //     title: 'Thank You!',
+                    //     text: response.success,
+                    //     showConfirmButton: false,
+                    //     timer: 3000
+                    // });
+                    toastr.success(response.success);
+
                 } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops!',
-                        text: response.error,
-                        showConfirmButton: false,
-                        timer: 3000
-                    });
+                    // Swal.fire({
+                    //     icon: 'error',
+                    //     title: 'Oops!',
+                    //     text: response.error,
+                    //     showConfirmButton: false,
+                    //     timer: 3000
+                    // });
+                    toastr.error(response.error);
+
                 }
                 window.location.reload();
             }
@@ -119,7 +127,7 @@ $(document).ready(function() {
     });
 
     //QTY CHANGE
-    $('.change_quantity').click(function(e){
+    $('.change_quantity').click(function (e) {
         e.preventDefault();
         var prod_id = $(this).closest('.product_data').find('.prod_id').val();
         var qty = $(this).closest('.product_data').find('.qty-input').val();
@@ -131,17 +139,31 @@ $(document).ready(function() {
             }
         });
         $.ajax({
-            method:"POST",
-            url:"update-cart",
-            data:{
-                'prod_id':prod_id,
-                'prod_qty':qty,
+            method: "POST",
+            url: "update-cart",
+            data: {
+                'prod_id': prod_id,
+                'prod_qty': qty,
             },
-            success:function(response){
+            success: function (response) {
                 $("#example1").load(window.location.href + " #example1");
             }
         });
 
     });
+
+    var availableTags = [];
+    $.ajax({
+        method: "GET",
+        url: "/product-list",
+        success: function (response) {
+            startAutoComplete(response);
+        }
+    });
+    function startAutoComplete(availableTags) {
+        $("#search_product").autocomplete({
+            source: availableTags
+        });
+    }
 
 });

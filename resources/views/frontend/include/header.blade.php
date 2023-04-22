@@ -30,6 +30,11 @@ $cart_items = DB::table('carts')->leftjoin('products', 'products.id', '=', 'cart
 	<!-- sweetalert js -->
 	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 
+	<!-- auto complete css -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+	<!-- toastr css -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 </head>
 
 <body class="header_sticky">
@@ -115,15 +120,16 @@ $cart_items = DB::table('carts')->leftjoin('products', 'products.id', '=', 'cart
 						</div><!-- /.col-md-3 -->
 						<div class="col-md-6">
 							<div class="top-search">
-								<form action="#" method="get" class="form-search" accept-charset="utf-8">
+								<form action="{{route('search_product')}}" method="post" class="form-search" accept-charset="utf-8">
+									@csrf
 									<div class="box-search">
-										<input type="text" name="search" placeholder="Search what you looking for ?">
+										<input type="text" id="search_product" class="search_product" name="product_name" placeholder="Search Product" required>
 										<span class="btn-search">
 											<button type="submit" class="waves-effect"><img src="{{asset('/frontend')}}/images/icons/search.png" alt=""></button>
 										</span>
 									</div><!-- /.box-search -->
 								</form><!-- /.form-search -->
-							</div><!-- /.top-search -->
+							</div>
 						</div><!-- /.col-md-6 -->
 						<div class="col-md-3">
 							<div class="box-cart">
@@ -183,7 +189,7 @@ $cart_items = DB::table('carts')->leftjoin('products', 'products.id', '=', 'cart
 										</div>
 										<div class="btn-cart">
 											<a href="{{route('view_cart')}}" class="view-cart" title="">View Cart</a>
-											<a href="shop-checkout.html" class="check-out" title="">Checkout</a>
+											<a href="{{route('checkout')}}" class="check-out" title="">Checkout</a>
 										</div>
 									</div>
 								</div><!-- /.inner-box -->

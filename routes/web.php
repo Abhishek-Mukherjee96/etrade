@@ -59,3 +59,5 @@ Route::post('/place-order', [CheckoutController::class, 'place_order'])->name('p
 Route::get('/product-update', [FrontendController::class, 'product_update'])->name('product_update');
 Route::get('/category/{id}', [FrontendController::class, 'product_cat'])->name('product_cat');
 Route::get('/shop', [FrontendController::class, 'shop'])->name('shop');
+Route::get('/product-list', [FrontendController::class, 'product_list_ajax'])->name('product_list_ajax');
+Route::post('/search-product', [FrontendController::class, 'search_product'])->name('search_product');

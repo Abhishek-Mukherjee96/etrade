@@ -248,6 +248,13 @@
 <!-- sweetalert js -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 
+<!-- auto complete js -->
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+<!-- toastr js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 </body>
 
 <!-- Mirrored from creativelayers.net/themes/techno-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Mar 2023 18:11:47 GMT -->
@@ -256,22 +263,25 @@
 
 @if(Session::has('success'))
 <script>
-    Swal.fire({
-        icon: 'success',
-        title: 'Thank You!',
-        text: '{{ Session::get("success") }} 🙂',
-        showConfirmButton: false,
-        timer: 3000
-    });
+    // Swal.fire({
+    //     icon: 'success',
+    //     title: 'Thank You!',
+    //     text: '{{ Session::get("success") }} 🙂',
+    //     showConfirmButton: false,
+    //     timer: 3000
+    // });
+    toastr.success('{{ Session::get("success") }}');
 </script>
 @elseif(Session::has('error'))
 <script>
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: '{{ Session::get("error") }}',
-        showConfirmButton: false,
-        timer: 3000
-    });
+    // Swal.fire({
+    //     icon: 'error',
+    //     title: 'Oops...',
+    //     text: '{{ Session::get("error") }}',
+    //     showConfirmButton: false,
+    //     timer: 3000
+    // });
+    toastr.error('{{ Session::get("error") }}');
+
 </script>
 @endif

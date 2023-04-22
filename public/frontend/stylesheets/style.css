@@ -3319,6 +3319,16 @@ ol.comment-list li.comment .comment-text .comment-content p {
 	border-bottom-color:transparent!important;
 }
 
+.ui-autocomplete{
+	z-index: 999!important;
+}
+#search_product {
+	border-radius: inherit!important;
+}
+.waves-effect{
+	border-radius: inherit!important;
+}
+
 @-webkit-keyframes effect-2 {
 	from {
 		-webkit-transform:rotate(0deg);
