@@ -276,9 +276,9 @@
 							</div><!-- /.box-bottom -->
 						</div><!-- /.imagebox -->
 					</div>
-					
+
 				</div><!-- /.col-lg-3 col-sm-6 -->
-				
+
 			</div><!-- /.row -->
 			<div class="row">
 				<div class="col-lg-3 col-sm-6">
@@ -399,7 +399,7 @@
 				</div>
 			</div><!-- /.col-md-12 -->
 		</div><!-- /.row -->
-		<div class="row ">
+		<div class="row">
 			<div class="col-md-12 owl-carousel-10">
 				@if(isset($our_products))
 				@foreach($our_products as $product)
@@ -423,7 +423,7 @@
 									<span class="sale">&#8377; {{$product->selling_price}}</span>
 								</div>
 							</div><!-- /.box-content -->
-							<div class="box-bottom">
+							<div class="box-bottom product_data">
 								<div class="compare-wishlist">
 									<a href="#" class="compare" title="">
 										<img src="{{asset('/frontend')}}/images/icons/compare.png" alt="">Compare
@@ -432,11 +432,19 @@
 										<img src="{{asset('/frontend')}}/images/icons/wishlist.png" alt="">Wishlist
 									</a>
 								</div>
+								<div class="quanlity">
+									<span class="btn-down decrement-btn" onclick="btndown()"></span>
+									<input type="hidden" value="{{$product->id}}" class="prod_id">
+									<input type="hidden" id="qty" class="qty-input" name="quantity" value="1" placeholder="Quanlity">
+									<span class="btn-up increment-btn" onclick="btnup()"></span>
+								</div>
+								@if($product->prod_qty > 0)
 								<div class="btn-add-cart">
-									<a href="#" title="">
+									<a href="#" class="add_to_cart" title="">
 										Add to Cart
 									</a>
 								</div>
+								@endif
 							</div><!-- /.box-bottom -->
 						</div>
 					</div>

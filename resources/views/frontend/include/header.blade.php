@@ -90,13 +90,10 @@ $cart_items = DB::table('carts')->leftjoin('products', 'products.id', '=', 'cart
 										</li>
 										@endif
 										<li>
-											<a href="wishlist.html" title="">Wishlist</a>
-										</li>
-										<li>
 											<a href="{{route('view_cart')}}" title="">My Cart</a>
 										</li>
 										<li>
-											<a href="my-account.html" title="">My Account</a>
+											<a href="{{route('my_orders')}}" title="">My Orders</a>
 										</li>
 										<li>
 											<a href="{{route('checkout')}}" title="">Checkout</a>

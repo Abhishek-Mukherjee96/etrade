@@ -44,6 +44,14 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 //FRONTEND ROUTE
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/cart', [CartController::class, 'view_cart'])->name('view_cart');
+    Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+    Route::post('/place-order', [CheckoutController::class, 'place_order'])->name('place_order');
+    Route::get('/my-orders', [FrontendController::class, 'my_orders'])->name('my_orders');
+    Route::get('/view-order/{id}', [FrontendController::class, 'view_order'])->name('view_order');
+
+});
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::post('/register', [UserAuthController::class, 'register'])->name('user.register');
 Route::post('/login', [UserAuthController::class, 'user_login'])->name('user.login');
@@ -51,11 +59,8 @@ Route::get('/user-logout', [UserAuthController::class, 'user_logout'])->name('us
 Route::get('/product-details/{slug}', [FrontendController::class, 'product_details'])->name('product_details');
 Route::post('/add-to-cart', [CartController::class, 'add_to_cart'])->name('add_to_cart');
 Route::get('/load-cart-data', [CartController::class, 'cart_count'])->name('cart_count');
-Route::get('/cart', [CartController::class, 'view_cart'])->name('view_cart');
 Route::post('/delete-cart-item', [CartController::class, 'delete_cart_item'])->name('delete_cart_item');
 Route::post('/update-cart', [CartController::class, 'update_cart'])->name('update_cart');
-Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
-Route::post('/place-order', [CheckoutController::class, 'place_order'])->name('place_order');
 Route::get('/product-update', [FrontendController::class, 'product_update'])->name('product_update');
 Route::get('/category/{id}', [FrontendController::class, 'product_cat'])->name('product_cat');
 Route::get('/shop', [FrontendController::class, 'shop'])->name('shop');

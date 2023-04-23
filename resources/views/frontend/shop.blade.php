@@ -286,7 +286,7 @@
                                             </a>
                                             @endforeach
                                         </div><!-- /.box-image -->
-                                        <div class="box-content">
+                                        <div class="box-content product_data">
                                             <div class="cat-name">
                                                 <a href="#" title="">{{@$product->name}}</a>
                                             </div>
@@ -300,7 +300,7 @@
                                         </div><!-- /.box-content -->
                                         <div class="box-bottom">
                                             <div class="btn-add-cart">
-                                                <a href="#" title="" class="add_to_cart">
+                                                <a href="#" title="">
                                                     <img src="{{asset('/frontend')}}/images/icons/add-cart.png" alt="">Add to Cart
                                                 </a>
                                             </div>

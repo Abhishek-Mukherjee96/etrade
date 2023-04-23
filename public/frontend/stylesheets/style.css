@@ -3328,6 +3328,12 @@ ol.comment-list li.comment .comment-text .comment-content p {
 .waves-effect{
 	border-radius: inherit!important;
 }
+.order_details_card_one{
+	border: 1px solid #eee;
+    padding: 20px 0px 20px 0px;
+    border-radius: 12px;
+    box-shadow: 11px 10px 8px -11px rgba(0,0,0,0.75);
+}
 
 @-webkit-keyframes effect-2 {
 	from {
