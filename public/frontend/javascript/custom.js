@@ -1,3 +1,5 @@
+// const { method } = require("lodash");
+
 $(document).ready(function () {
 
     //LOAD CART COUNT
@@ -165,5 +167,52 @@ $(document).ready(function () {
             source: availableTags
         });
     }
+
+    //COUPON CODE
+
+    $('.apply_coupon_btn').click(function(e){
+        e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        
+        var coupon_code = $('.coupon_code').val();
+        //alert(coupon_code);
+        if($.trim(coupon_code).length == 0){
+            error_coupon = "Please enter valid coupon";
+            $('#error_coupon').text(error_coupon);
+        }else{
+            error_coupon = '';
+            $('#error_coupon').text(error_coupon);
+        }
+
+        if(error_coupon != ''){
+            return false;
+        }
+
+        $.ajax({
+            url:"/check-coupon-code",
+            method:"POST",
+            data:{
+                'coupon_code':coupon_code
+            },
+            success:function(response){
+                //console.log(response);
+                if(response.error_status == 'error'){
+                    toastr.error(response.status);
+                    $('.coupon_code').val('');
+                }else{
+                    var discount_price = response.discount_price;
+                    var grand_total_price = response.grand_total_price;
+                    $('.coupon_code').prop('readonly', true);
+                    $('.discount_price').text(discount_price);
+                    $('.grandtotal_price').text(grand_total_price);
+                }
+            }
+        });
+
+    });
 
 });

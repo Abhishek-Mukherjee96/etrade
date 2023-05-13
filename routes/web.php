@@ -31,8 +31,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/update-profile', [ProfileController::class, 'update_profile'])->name('update_profile');
     Route::post('/update-password', [ProfileController::class, 'update_password'])->name('update_password');
 
-
-
     //PRODUCT ROUTE
     Route::get('/product-list', [ProductController::class, 'product_list'])->name('product_list');
     Route::get('/add-product', [ProductController::class, 'add_product'])->name('add_product');
@@ -41,6 +39,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/edit-product-action/{id}', [ProductController::class, 'edit_product_action'])->name('edit_product_action');
     Route::get('/delete-product-action/{id}', [ProductController::class, 'delete_product_action'])->name('delete_product_action');
     Route::get('/update-product-status/{id}', [ProductController::class, 'update_product_status'])->name('update_product_status');
+
+    //COUPON CODE ROUTE
+    Route::get('/coupon-list', [ProductController::class, 'coupon_list'])->name('coupon_list');
+    Route::get('/add-coupon', [ProductController::class, 'add_coupon'])->name('add_coupon');
+    Route::post('/add-coupon-action', [ProductController::class, 'add_coupon_action'])->name('add_coupon_action');
+    Route::get('/edit-coupon/{id}', [ProductController::class, 'edit_coupon'])->name('edit_coupon');
+    Route::post('/edit-coupon-action/{id}', [ProductController::class, 'edit_coupon_action'])->name('edit_coupon_action');
+    Route::get('/delete-coupon-action/{id}', [ProductController::class, 'delete_coupon_action'])->name('delete_coupon_action');
+    Route::get('/update-coupon-status/{id}', [ProductController::class, 'update_coupon_status'])->name('update_coupon_status');
 });
 
 //FRONTEND ROUTE
@@ -66,3 +73,4 @@ Route::get('/category/{id}', [FrontendController::class, 'product_cat'])->name('
 Route::get('/shop', [FrontendController::class, 'shop'])->name('shop');
 Route::get('/product-list', [FrontendController::class, 'product_list_ajax'])->name('product_list_ajax');
 Route::post('/search-product', [FrontendController::class, 'search_product'])->name('search_product');
+Route::post('/check-coupon-code', [CheckoutController::class, 'check_coupon_code'])->name('check_coupon_code');

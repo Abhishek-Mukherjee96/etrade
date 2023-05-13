@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\Coupon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -254,27 +255,93 @@ class ProductController extends Controller
       $req->session()->flash('success', 'Status has been updated successfully.');
       return redirect()->route('product_list');
     }
+
+    //GET ALL COUPON
+    public function coupon_list(){
+        $coupon_list = Coupon::latest()->get();
+        return view('admin.coupon.index',compact('coupon_list'));
+    }
+
+    //LOAD ADD FORM
+    public function add_coupon(){
+        return view('admin.coupon.add');
+    }
+
+    //ADD COUPON
+    public function add_coupon_action(Request $req){
+    
+        $add_coupon = new Coupon();
+
+        $add_coupon->coupon_code = $req->coupon_code;
+        $add_coupon->coupon_type = $req->coupon_type;
+        $add_coupon->coupon_price = $req->coupon_price;
+        $add_coupon->start_date = $req->start_date;
+        $add_coupon->end_date = $req->end_date;
+        $add_coupon->status = 1;
+
+        if ($add_coupon->save()) {
+            $req->session()->flash('success', 'Coupon Added Successfully.');
+            return redirect()->route('coupon_list');
+        } else {
+            $req->session()->flash('error', 'Something Went Wrong, Please Try Again.');
+            return redirect()->back();
+        }
+    }
+
+    //EDIT COUPON
+    public function edit_coupon($id){
+        $edit_coupon = Coupon::find($id);
+        return view('admin.coupon.edit',compact('edit_coupon'));
+    }
+
+    //UPDATE COUPON
+    public function edit_coupon_action(Request $req){
+        $update_coupon = Coupon::find($req->id);
+        $update_coupon->coupon_code = $req->coupon_code;
+        $update_coupon->coupon_type = $req->coupon_type;
+        $update_coupon->coupon_price = $req->coupon_price;
+        $update_coupon->start_date = $req->start_date;
+        $update_coupon->end_date = $req->end_date;
+        $update_coupon->status = 1;
+
+        if ($update_coupon->save()) {
+            $req->session()->flash('success', 'Coupon Updated Successfully.');
+            return redirect()->route('coupon_list');
+        } else {
+            $req->session()->flash('error', 'Something Went Wrong, Please Try Again.');
+            return redirect()->back();
+        }
+    }
+
+    //DELETE COUPON
+    public function delete_coupon_action(Request $req,$id){
+        Coupon::destroy($id);
+        $req->session()->flash('success', 'Coupon Deleted Successfully.');
+        return redirect()->route('coupon_list');
+    }
+
+    //COUPON STATUS UPDATE
+    public function update_coupon_status(Request $req,$id){
+
+      //get post status with the help of post id
+      $data = DB::table('coupons')->select('status')->where('id', '=', $id)->first();
+
+      //check post status
+
+      if ($data->status == '1') {
+         $status = '0';
+      } else {
+         $status = '1';
+      }
+
+      //update post status
+
+      $data = array('status' => $status);
+      DB::table('coupons')->where('id', $id)->update($data);
+      $req->session()->flash('success', 'Status has been updated successfully.');
+      return redirect()->route('coupon_list');
+    }
         
     }
 
-
-
-
-
-
-
-
-    // $req->validate([
-    //     'title' => 'required',
-    //     'slug' => 'required|unique:products,slug' 
-    // ]);
-
-    // $add_category = new Product();
-    // $add_category->title = $req->title;
-    // $add_category->price = $req->price;
-    // $add_category->slug = Str::slug($req->slug);
-    // $add_category->short_desc = $req->short_desc;
-    // $add_category->description = $req->description;
-    // $add_category->additional_info = $req->additional_info;
-    // $add_category->short_desc = $req->short_desc;
 

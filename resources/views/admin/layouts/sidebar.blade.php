@@ -52,7 +52,19 @@ $profile_details = User::where('id', Auth::user()->id)->select('users.*')->first
                 <span class="side-menu__label">Product</span><i class="angle fa fa-angle-right"></i></a>
             <ul class="slide-menu">
                 <li><a href="{{route('category_list')}}" class="slide-item">Category List</a></li>
-                <li><a href="{{route('product_list')}}" class="slide-item">Product List</a></li>
+                <li><a href="{{url('product-list')}}" class="slide-item">Product List</a></li>
+            </ul>
+        </li>
+        <li class="side-item side-item-category">Manage Coupon</li>
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="index-2.html#">
+                <svg class="side-menu__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                    <path d="M0 0h24v24H0V0z" fill="none" />
+                    <path d="M16.66 4.52l2.83 2.83-2.83 2.83-2.83-2.83 2.83-2.83M9 5v4H5V5h4m10 10v4h-4v-4h4M9 15v4H5v-4h4m7.66-13.31L11 7.34 16.66 13l5.66-5.66-5.66-5.65zM11 3H3v8h8V3zm10 10h-8v8h8v-8zm-10 0H3v8h8v-8z" />
+                </svg>
+                <span class="side-menu__label">Coupons</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+                <li><a href="{{route('coupon_list')}}" class="slide-item">Coupon List</a></li>
             </ul>
         </li>
     </ul>

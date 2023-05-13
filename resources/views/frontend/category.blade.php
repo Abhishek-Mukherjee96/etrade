@@ -273,7 +273,7 @@
                             <div class="clearfix"></div>
                         </div><!-- /.sort-product style1 -->
                         <div class="row">
-                            @if(isset($products))
+                            @if(count($products) > 0)
                             @foreach($products as $product)
                             <div class="col-md-4 col-sm-6">
                                 <div class="product-box">
@@ -319,7 +319,7 @@
                             </div><!-- /.col-md-4 col-sm-6 -->
                             @endforeach
                             @else
-                            <span class="text-danger">No Data Found</span>
+                            <span class="text-danger">No Products Found</span>
                             @endif
                             <div class="divider10"></div>
 

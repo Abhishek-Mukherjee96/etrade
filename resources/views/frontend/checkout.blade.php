@@ -2,6 +2,18 @@
 <title>Checkout | Techno Store</title>
 <section class="flat-checkout">
     <div class="container">
+        <div class="row p-3">
+            <div class="card">
+                <div class="card-body p-2">
+                    <h3>Coupon Code</h3>
+                    <span class="d-flex mt-3">
+                        <input type="text" class="form-control mb-3 coupon_code" placeholder="Enter Coupon Code">
+                        <button type="submit" class="btn btn-primary ml-3 apply_coupon_btn">Apply</button>
+                    </span>
+                    <small id="error_coupon" class="text-danger"></small>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-7">
                 <div class="box-checkout">
@@ -96,23 +108,19 @@
                             $total += $item->selling_price * $item->qty;
                             @endphp
                             @endforeach
-                        </tbody>
-                    </table><!-- /.product -->
-                    <hr>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>Total</td>
-                                <td class="price-total">{{$total}}</td>
-                            </tr>
                             @else
                             <tr>
                                 <td colspan="2">No products in cart</td>
                             </tr>
                             @endif
-
                         </tbody>
-                    </table>
+                    </table><!-- /.product -->
+                    <hr>
+                    <div class="text-right">
+                        <h4 class="mb-2">Sub Total: {{$total}}</h4>
+                        <h4 class="mb-2">Discount: <span class="discount_price">0.00</span></h4>
+                        <h4>Grand Total: <span class="grandtotal_price">{{$total}}</span></h4>
+                    </div>
                     @if(count($cart_items) > 0)
                     <div class="checkbox">
                         <input type="checkbox" id="checked-order" name="checked-order" checked>
@@ -187,4 +195,5 @@
         </div><!-- /.row -->
     </div><!-- /.container -->
 </section><!-- /.flat-iconbox -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 @include('frontend.include.footer')
