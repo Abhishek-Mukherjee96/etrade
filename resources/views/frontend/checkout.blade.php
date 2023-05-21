@@ -117,9 +117,9 @@
                     </table><!-- /.product -->
                     <hr>
                     <div class="text-right">
-                        <h4 class="mb-2">Sub Total: {{$total}}</h4>
-                        <h4 class="mb-2">Discount: <span class="discount_price">0.00</span></h4>
-                        <h4>Grand Total: <span class="grandtotal_price">{{$total}}</span></h4>
+                        <h4 class="mb-2">Sub Total: ₹{{$total}}</h4>
+                        <h4 class="mb-2">Discount: <span class="discount_price">₹0.00</span></h4>
+                        <h4>Grand Total: <span class="grandtotal_price">₹{{$total}}</span></h4>
                     </div>
                     @if(count($cart_items) > 0)
                     <div class="checkbox">

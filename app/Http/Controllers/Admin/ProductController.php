@@ -264,7 +264,9 @@ class ProductController extends Controller
 
     //LOAD ADD FORM
     public function add_coupon(){
-        return view('admin.coupon.add');
+        $category = ProductCategory::get();
+        $product = Product::get();
+        return view('admin.coupon.add', compact('category','product'));
     }
 
     //ADD COUPON
@@ -272,9 +274,15 @@ class ProductController extends Controller
     
         $add_coupon = new Coupon();
 
-        $add_coupon->coupon_code = $req->coupon_code;
+        if($req->coupon_type == 'PFC'){
+            $add_coupon->coupon_code = "C".'_'.$req->coupon_code;
+        }else{
+            $add_coupon->coupon_code = "P".'_'.$req->coupon_code;
+        }
         $add_coupon->coupon_type = $req->coupon_type;
-        $add_coupon->coupon_price = $req->coupon_price;
+        $add_coupon->discount = $req->discount;
+        $add_coupon->category_id = $req->category_id;
+        $add_coupon->product_id = $req->product_id;
         $add_coupon->start_date = $req->start_date;
         $add_coupon->end_date = $req->end_date;
         $add_coupon->status = 1;
@@ -291,15 +299,23 @@ class ProductController extends Controller
     //EDIT COUPON
     public function edit_coupon($id){
         $edit_coupon = Coupon::find($id);
-        return view('admin.coupon.edit',compact('edit_coupon'));
+        $category = ProductCategory::get();
+        $product = Product::get();
+        return view('admin.coupon.edit',compact('edit_coupon', 'category', 'product'));
     }
 
     //UPDATE COUPON
     public function edit_coupon_action(Request $req){
         $update_coupon = Coupon::find($req->id);
-        $update_coupon->coupon_code = $req->coupon_code;
+        if($req->coupon_type == 'PFC'){
+            $update_coupon->coupon_code = "C".'_'.$req->coupon_code;
+        }else{
+            $update_coupon->coupon_code = "P".'_'.$req->coupon_code;
+        }
         $update_coupon->coupon_type = $req->coupon_type;
-        $update_coupon->coupon_price = $req->coupon_price;
+        $update_coupon->discount = $req->discount;
+        $update_coupon->category_id = $req->category_id;
+        $update_coupon->product_id = $req->product_id;
         $update_coupon->start_date = $req->start_date;
         $update_coupon->end_date = $req->end_date;
         $update_coupon->status = 1;

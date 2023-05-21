@@ -41,7 +41,38 @@
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
-                                        <div class="col-md-4 mb-3">
+                                        <div class="col-md-4">
+                                            <label class="form-label">Coupon Type:<span class="required"></span></label>
+                                            <select name="coupon_type" id="coupon_type" class="form-control" required>
+                                                <option value="" selected disabled>Select</option>
+                                                <option value="PFC">Percentage for Category</option>
+                                                <option value="PFP">Percentage for Product</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4" id="pfc" style="display: none;">
+                                            <label class="form-label">Category</label>
+                                            <select name="category_id" class="form-control">
+                                                <option value="" selected disabled>Select</option>
+                                                @if(isset($category))
+                                                @foreach($category as $cat)
+                                                    <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                                @endforeach
+                                                @endif
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4" id="pfp" style="display: none;">
+                                            <label class="form-label">Product</label>
+                                            <select name="product_id" class="form-control">
+                                                <option value="" selected disabled>Select</option>
+                                                @if(isset($product))
+                                                @foreach($product as $prod)
+                                                    <option value="{{$prod->id}}">{{$prod->title}}</option>
+                                                @endforeach
+                                                @endif
+                                            </select>
+                                        </div>
+
+                                        {{--<div class="col-md-4 mb-3">
                                             <label><strong> Coupon Type:</strong></label>
                                             <select name="coupon_type" class="form-control">
                                                 <option value="" selected disabled>Select</option>
@@ -51,11 +82,11 @@
                                             @error('coupon_type')
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
-                                        </div>
+                                        </div>--}}
                                         <div class="col-md-4 mb-3">
-                                            <label><strong> Coupon Price:</strong></label>
-                                            <input class="form-control mb-4" value="{{old('coupon_price')}}" placeholder=" Coupon Price" type="text" name="coupon_price">
-                                            @error('coupon_price')
+                                            <label><strong> Discount (in percentage):</strong></label>
+                                            <input class="form-control mb-4" value="{{old('discount')}}" placeholder="Discount (in percentage)" type="text" name="discount">
+                                            @error('discount')
                                             <span class="text text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
@@ -89,3 +120,19 @@
             <!-- End app-content-->
         </div>
         @endsection
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script>
+         $(document).ready(function(e){
+             $("#coupon_type").change(function(e) {
+                 e.preventDefault();
+                 var data = $(this).val()
+                 if (data == "PFC") {
+                     $("#pfc").show();
+                     $("#pfp").hide();
+                 } else if(data == "PFP") {
+                     $("#pfp").show();
+                     $("#pfc").hide();
+                 }
+             });
+         });  
+        </script>

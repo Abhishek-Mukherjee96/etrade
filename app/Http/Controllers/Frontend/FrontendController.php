@@ -17,7 +17,8 @@ class FrontendController extends Controller
     //LOAD HOME PAGE
     public function index()
     {
-        $our_products = Product::leftjoin('product_categories', 'product_categories.id', '=', 'products.cat_id')->get();
+        $our_products = Product::select("products.*", "product_categories.name as name")->leftjoin('product_categories', 'product_categories.id', '=', 'products.cat_id')->get();
+        // dd($our_products);
         $categorys = DB::table('product_categories')->where('status', 1)->get();
         return view('frontend.index', compact('our_products', 'categorys'));
     }
@@ -122,14 +123,15 @@ class FrontendController extends Controller
     //MY ORDER
     public function my_orders(){
         $orders = Order::where('user_id',Auth::user()->id)->get();
+        // dd($orders);
         return view('frontend.orders',compact('orders'));
     }
 
     //VIEW ORDER DETAILS
     public function view_order($id){
-        $view_order = Order::where('user_id',Auth::user()->id)->first();
-        $get_order_items = OrderItem::leftjoin('orders','orders.id','=','order_items.order_id')->leftjoin('products','products.id','=','order_items.product_id')->get();
-        //dd($get_order_items);
+        $view_order = Order::find($id);
+        $get_order_items = OrderItem::where("order_id", $id)->leftjoin('orders','orders.id','=','order_items.order_id')->leftjoin('products','products.id','=','order_items.product_id')->get();
+        // dd($get_order_items);
         return view('frontend.view-orders',compact('view_order','get_order_items'));
     }
 }

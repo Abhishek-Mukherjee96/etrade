@@ -8,7 +8,6 @@ use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
-use App\Models\ProductCategory;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -105,29 +104,10 @@ class CheckoutController extends Controller
                 }
                 
                 //checking coupon type
-                if($coupon->coupon_type == "PFC"){ //PFC for percentage for category
-                    $category = ProductCategory::leftjoin('coupons','product_categories.id', '=', 'coupons.category_id')->first();
-                    //dd($category);
-                    if(Coupon::where(['category_id' => $category->id, 'coupon_code' => $category->coupon_code])->exists()){
-                        $discount_price = ($total / 100) * $coupon->discount;
-                    }else{
-                        return response()->json([
-                            'status' => 'Coupon is invalid for this category',
-                            'error_status' => 'error',
-                        ]);
-                    }
-
-                }elseif($coupon->coupon_type == "PFP"){ //PFP for percentage for product
-                    $product = Product::leftjoin('coupons','products.id', '=', 'coupons.product_id')->first();
-                    //dd($product);
-                    if(Coupon::where(['product_id' => $product->id, 'coupon_code' => $product->coupon_code])->exists()){
-                        $discount_price = ($total / 100) * $coupon->discount;
-                    }else{
-                        return response()->json([
-                            'status' => 'Coupon is invalid for this product',
-                            'error_status' => 'error',
-                        ]);
-                    }
+                if($coupon->coupon_type == "1"){ //1 for percentage
+                    $discount_price = ($total / 100) * $coupon->discount;
+                }elseif($coupon->coupon_type == "2"){ //2 for amount
+                    $discount_price = $coupon->discount;
 
                 } 
 

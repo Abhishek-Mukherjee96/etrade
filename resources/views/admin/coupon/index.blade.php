@@ -47,7 +47,6 @@
                                                     <th class="wd-15p border-bottom-0">Start Date</th>
                                                     <th class="wd-15p border-bottom-0">End Date</th>
                                                     <th class="wd-15p border-bottom-0">Coupon Type</th>
-                                                    <th class="wd-15p border-bottom-0">Coupon Price</th>
                                                     <th class="wd-15p border-bottom-0">Status</th>
                                                     <th class="wd-20p border-bottom-0">Action</th>
                                                 </tr>
@@ -60,12 +59,7 @@
                                                     <td>{{$list->coupon_code}}</td>
                                                     <td>{{$list->start_date}}</td>
                                                     <td>{{$list->end_date}}</td>
-                                                    @if($list->coupon_type == 1)
-                                                    <td>Percentage</td>
-                                                    @else
-                                                    <td>Amount</td>
-                                                    @endif
-                                                    <td>{{$list->coupon_price}}</td>
+                                                    <td>{{$list->coupon_type}}</td>
                                                     <td>
                                                         @if($list->status == '1')
                                                         <a href="{{route('update_coupon_status', $list->id)}}" class="btn btn-success btn-sm">Active</a>
