@@ -35,6 +35,8 @@
                                 </div>
                                 @php
                                 $total += $item->selling_price * $item->qty;
+                                $gst = $total * 18 / 100;
+                                $grand_total = ($total * 18 / 100) + $total;
                                 @endphp
                                 @else
                                 <div class="status-product">
@@ -67,29 +69,17 @@
                     <form action="#" method="get" accept-charset="utf-8">
                         <table id="example1">
                             <tbody>
-                                <!-- <tr>
-                                    <td>Subtotal</td>
-                                    <td class="subtotal">$2,589.00</td>
-                                </tr> -->
-                                <!-- <tr>
-                                    <td>Shipping</td>
-                                    <td class="btn-radio">
-                                        <div class="radio-info">
-                                            <input type="radio" id="flat-rate" checked name="radio-flat-rate">
-                                            <label for="flat-rate">Flat Rate: <span>$3.00</span></label>
-                                        </div>
-                                        <div class="radio-info">
-                                            <input type="radio" id="free-shipping" name="radio-flat-rate">
-                                            <label for="free-shipping">Free Shipping</label>
-                                        </div>
-                                        <div class="btn-shipping">
-                                            <a href="#" title="">Calculate Shipping</a>
-                                        </div>
-                                    </td>
-                                </tr> -->
                                 <tr>
-                                    <td>Total</td>
-                                    <td class="price-total">&#8377; {{$total}}</td>
+                                    <td>Subtotal</td>
+                                    <td class="subtotal">&#8377;{{$total}}</td>
+                                </tr>
+                                <tr>
+                                    <td>GST(18%)</td>
+                                    <td class="subtotal">&#8377;{{$gst}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Grand Total</td>
+                                    <td class="price-total">&#8377;{{$grand_total}}</td>
                                 </tr>
                             </tbody>
                         </table>

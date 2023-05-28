@@ -106,6 +106,8 @@
                             </tr>
                             @php
                             $total += $item->selling_price * $item->qty;
+                            $gst = $total * 18 / 100;
+                            $grand_total = ($total * 18 / 100) + $total;
                             @endphp
                             @endforeach
                             @else
@@ -119,7 +121,8 @@
                     <div class="text-right">
                         <h4 class="mb-2">Sub Total: ₹{{$total}}</h4>
                         <h4 class="mb-2">Discount: <span class="discount_price">₹0.00</span></h4>
-                        <h4>Grand Total: <span class="grandtotal_price">₹{{$total}}</span></h4>
+                        <h4 class="mb-2">GST(18%): <span class="grandtotal_price">₹{{$gst}}</span></h4>
+                        <h4>Grand Total: <span class="grandtotal_price">₹{{$grand_total}}</span></h4>
                     </div>
                     @if(count($cart_items) > 0)
                     <div class="checkbox">
